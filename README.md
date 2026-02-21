@@ -31,56 +31,55 @@ An adversary who wants to mint tokens with forged parameters or without a real q
 
 ## Architecture
 
-```
-    Off-chain (worker process)                  On-chain (ADI Chain, chainId=99999)
-    ──────────────────────────────────────────────────────────────────────────────
+```mermaid
+flowchart TD
+    subgraph chain["On-chain · ADI Chain (chainId 99999)"]
+        direction TB
+        IR[("IssuanceRegistry\nstores parametersHash · status")]
+        PR[("PolicyRegistry\nstores policyHash · attestorRoot\nthreshold · validity window")]
+        TE["TokenisationEngine\nverifyAndExecuteIssuance()"]
+        V["ISp1Verifier\nverifyProof(vkey, proof, values)"]
+        TOKEN["RwaToken1155\nERC-1155 mint"]
+        SETTLE["ConfidentialSettlement\ntransparent / confidential"]
+    end
 
-    IssuanceRequestCreated event ◄──────────── IssuanceRegistry
-    (requestId, parametersHash, policyId)          stores: parametersHash, status
+    subgraph worker["Off-chain · Worker process"]
+        direction TB
+        EVT["IssuanceRequestCreated event\n(requestId · parametersHash · policyId)"]
+        REDIS[("Redis\nattestation signatures")]
+        GQL["Envio GraphQL\npolicy + request state"]
+        WIT["Assemble WitnessInput\nrequest · policy · attestations · checks · timestamp"]
 
-    Fetch attestations from Redis                PolicyRegistry
-    Fetch policy from Envio GraphQL                stores: policyHash, attestorRoot,
-                                                   threshold, validity window
+        subgraph guest["SP1 guest · issuance-claim"]
+            direction TB
+            G1["① recompute parametersHash from request fields"]
+            G2["② recompute policyHash from policy fields"]
+            G3["③ Merkle membership — attestor ∈ attestorRoot"]
+            G4["④ ECDSA recovery — recovered addr == Merkle leaf"]
+            G5["⑤ valid sig count ≥ threshold"]
+            G6["⑥ current_timestamp ∈ validFrom..validUntil"]
+            G7["⑦ compliance record age ≤ freshnessWindow"]
+            PV(["public values\nparametersHash · policyHash"])
+        end
 
-    ┌──────────────────────────────────┐
-    │  Assemble WitnessInput JSON      │
-    │  (request fields, policy fields, │
-    │   attestation sigs + Merkle      │
-    │   proofs, compliance records,    │
-    │   current_timestamp)             │
-    └──────────────┬───────────────────┘
-                   │
-                   ▼
-    ┌──────────────────────────────────┐
-    │  SP1 guest: issuance-claim       │
-    │                                  │
-    │  1. Recompute parametersHash     │
-    │  2. Recompute policyHash         │
-    │  3. Verify Merkle membership     │
-    │     for each attestor address    │
-    │  4. Recover ECDSA signatures,    │
-    │     match against Merkle leaf    │
-    │  5. Count valid sigs ≥ threshold │
-    │  6. Check timestamp in window    │
-    │  7. Check compliance freshness   │
-    │                                  │
-    │  Output: (parametersHash,        │
-    │           policyHash)            │
-    └──────────────┬───────────────────┘
-                   │
-                   ▼
-    Succinct SP1 prover → proof bytes
-                   │
-                   ▼
-    worker calls TokenisationEngine ──────────► TokenisationEngine
-    .verifyAndExecuteIssuance(proof, values)       1. ISp1Verifier.verifyProof(vkey, proof, values)
-                                                   2. values.parametersHash == stored hash
-                                                   3. values.policyHash == stored hash
-                                                   4. request.status == REQUESTED
-                                                   5. Mark CONSUMED
-                                                   6. Mint ERC-1155 tokens
-                                                   7. Settle payment (transparent or confidential)
-                                                   8. Emit IssuanceExecuted + audit receipt
+        PROVER["Succinct SP1 prover\nproof bytes"]
+    end
+
+    IR -->|"IssuanceRequestCreated"| EVT
+    PR -->|"policyHash"| GQL
+    EVT --> WIT
+    REDIS -->|"sigs + Merkle proofs"| WIT
+    GQL -->|"policy fields"| WIT
+    WIT --> G1 --> G2 --> G3 --> G4 --> G5 --> G6 --> G7 --> PV
+    PV --> PROVER
+    PROVER -->|"proof + public values"| TE
+    TE --> V
+    V -->|"✓ proof valid"| TE
+    TE -->|"assert parametersHash"| IR
+    TE -->|"assert policyHash"| PR
+    IR -->|"mark CONSUMED"| TE
+    TE --> TOKEN
+    TE --> SETTLE
 ```
 
 ## Components
@@ -98,18 +97,28 @@ An adversary who wants to mint tokens with forged parameters or without a real q
 
 ### The witness
 
-The SP1 guest receives a `WitnessInput` struct (defined in `crates/sdk/src/types.rs`):
+The SP1 guest receives a `WitnessInput` struct ([`crates/sdk/src/types.rs`](crates/sdk/src/types.rs)):
 
 ```rust
+/// Canonical witness payload used by prover/guest validation logic.
 pub struct WitnessInput {
+    /// Issuance request identifier.
     pub request_identifier: String,
+    /// Policy identifier.
     pub policy_identifier: String,
-    pub chain_id: String,           // domain separation
-    pub issuance_registry: String,  // domain separation
-    pub request: RequestWitness,    // fields that reproduce parametersHash
-    pub policy: PolicyWitness,      // fields that reproduce policyHash + rules
-    pub attestations: Vec<AttestationWitness>, // sig + Merkle proof per attestor
-    pub checks: Vec<ComplianceCheckRecord>,    // KYC/AML records + timestamps
+    /// Chain id bound into parameters hash domain separation.
+    pub chain_id: String,
+    /// IssuanceRegistry contract address bound into parameters hash domain separation.
+    pub issuance_registry: String,
+    /// Request field set used to recompute `parametersHash`.
+    pub request: RequestWitness,
+    /// Policy field set used to recompute `policyHash` and enforce policy rules.
+    pub policy: PolicyWitness,
+    /// Attestation records used for signature + membership threshold verification.
+    pub attestations: Vec<AttestationWitness>,
+    /// Compliance checks used for required-check and freshness validation.
+    pub checks: Vec<ComplianceCheckRecord>,
+    /// Current timestamp (seconds since epoch) used for validity/freshness checks.
     pub current_timestamp: u64,
 }
 ```
