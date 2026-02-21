@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eudemonia — We Tokenise Compliance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0c1a2e;
+      --bg-deep: #080f1c;
+      --surface: #11263f;
+      --border: rgba(240, 244, 252, 0.10);
+      --border-strong: rgba(240, 244, 252, 0.18);
+
+      --gold: #f2c43d;
+      --gold-dim: rgba(242, 196, 61, 0.12);
+      --gold-border: rgba(242, 196, 61, 0.25);
+
+      --text: #eef3fb;
+      --text-muted: rgba(238, 243, 251, 0.50);
+      --text-mid: rgba(238, 243, 251, 0.75);
+
+      --success: #0f8a5f;
+      --success-dim: rgba(15, 138, 95, 0.12);
+      --success-border: rgba(15, 138, 95, 0.25);
+
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --ease: cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      background: var(--bg-deep);
+      color: var(--text);
+      font-family: 'Manrope', 'Avenir Next', 'Segoe UI', sans-serif;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .deck {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 68px 100px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .5s var(--ease), transform .5s var(--ease);
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: none;
+      pointer-events: auto;
+    }
+
+    .slide.out {
+      opacity: 0;
+      transform: translateY(-16px);
+    }
+
+    .wordmark {
+      position: fixed;
+      top: 30px;
+      left: 44px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .wordmark-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .counter {
+      position: fixed;
+      top: 30px;
+      right: 44px;
+      z-index: 50;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      color: var(--text-muted);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .progress {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--border);
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--gold);
+      transition: width .5s var(--ease);
+    }
+
+    .hint {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .hint kbd {
+      border: 1px solid var(--border-strong);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 10px;
+      font-family: inherit;
+    }
+
+    .nav-btn {
+      position: fixed;
+      bottom: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      color: var(--text-muted);
+      cursor: pointer;
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: all .2s;
+      z-index: 100;
+    }
+
+    .nav-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    #btn-prev {
+      right: 82px;
+    }
+
+    #btn-next {
+      right: 38px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(130deg, var(--text) 0%, var(--gold) 60%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .divider-line {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 1px;
+      margin: 26px auto;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 30px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+
+    .pill-gold {
+      background: var(--gold-dim);
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+    }
+
+    /* SLIDE 1 */
+    #s1 {
+      text-align: center;
+    }
+
+    .q-wrap {
+      max-width: 900px;
+    }
+
+    .q-headline {
+      font-size: clamp(34px, 4.8vw, 62px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -.025em;
+    }
+
+    .q-sub {
+      margin-top: 30px;
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .q-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      border-radius: 30px;
+      padding: 7px 18px;
+      margin-top: 34px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      color: var(--gold);
+    }
+
+    .q-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* SLIDE 2 */
+    #s2 {
+      align-items: flex-start;
+      max-width: 1060px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .s2-headline {
+      font-size: clamp(24px, 3.2vw, 44px);
+      font-weight: 800;
+      letter-spacing: -.025em;
+      line-height: 1.18;
+      margin-top: 10px;
+      margin-bottom: 28px;
+    }
+
+    .story-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+      margin-bottom: 22px;
+    }
+
+    .story-fact {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 22px;
+    }
+
+    .story-fact-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      margin-top: 1px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      font-family: 'IBM Plex Mono', monospace;
+      background: var(--gold-dim);
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+    }
+
+    .story-fact-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-mid);
+    }
+
+    .story-fact-text strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .story-close {
+      font-size: 15px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      width: 100%;
+      line-height: 1.6;
+    }
+
+    .story-close strong {
+      color: var(--text-mid);
+    }
+
+    .bridge {
+      margin-top: 14px;
+      width: 100%;
+      background: rgba(240, 244, 252, .06);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .bridge strong {
+      color: var(--text-mid);
+      font-weight: 700;
+    }
+
+    /* SLIDE 3 */
+    #s3 {
+      align-items: flex-start;
+      max-width: 1060px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .blockers {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+    }
+
+    .blocker {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 22px;
+      border-left: 3px solid var(--border-strong);
+    }
+
+    .blocker.gold {
+      border-left-color: var(--gold);
+    }
+
+    .blocker.green {
+      border-left-color: var(--success);
+    }
+
+    .blocker-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      margin-top: 1px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      font-family: 'IBM Plex Mono', monospace;
+      background: rgba(240, 244, 252, .06);
+      color: var(--text-mid);
+      border: 1px solid var(--border-strong);
+    }
+
+    .blocker-num.gold {
+      background: var(--gold-dim);
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+    }
+
+    .blocker-num.green {
+      background: var(--success-dim);
+      color: var(--success);
+      border: 1px solid var(--success-border);
+    }
+
+    .blocker-text {
+      flex: 1;
+    }
+
+    .blocker-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .blocker-body {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    .blocker-body strong {
+      color: var(--text-mid);
+      font-weight: 600;
+    }
+
+    /* SLIDE 4 */
+    #s4 {
+      max-width: 1060px;
+      margin: 0 auto;
+      width: 100%;
+      align-items: flex-start;
+    }
+
+    .s3-headline {
+      font-size: clamp(22px, 2.8vw, 38px);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .s3-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .vs-table {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .vs-row {
+      display: grid;
+      grid-template-columns: 88px 1fr 28px 1fr;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+    }
+
+    .vs-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .vs-old {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      opacity: .6;
+    }
+
+    .vs-arr {
+      color: var(--gold);
+      font-size: 15px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .vs-new {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* SLIDE 5 */
+    #s5 {
+      text-align: center;
+    }
+
+    .lfo-big {
+      font-size: clamp(56px, 9vw, 112px);
+      font-weight: 900;
+      letter-spacing: -.045em;
+      line-height: 1;
+    }
+
+    .lfo-sub {
+      margin-top: 28px;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-family: 'IBM Plex Mono', monospace;
+      letter-spacing: .06em;
+    }
+
+    .live-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--success-dim);
+      border: 1px solid var(--success-border);
+      border-radius: 30px;
+      padding: 9px 22px;
+      margin-top: 24px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--success);
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+      animation: blink 1.6s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .2;
+      }
+    }
+
+    /* SLIDE 6 */
+    #s6 {
+      text-align: center;
+    }
+
+    .s6-q {
+      font-size: clamp(22px, 2.8vw, 40px);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      line-height: 1.18;
+      max-width: 860px;
+      margin-bottom: 26px;
+    }
+
+    .ans-list {
+      list-style: none;
+      text-align: left;
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .ans-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .a-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--gold);
+      margin-top: 3px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .s6-cta {
+      margin-top: 30px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .s6-cta strong {
+      color: var(--text);
+      font-weight: 800;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wordmark">
+    <div class="wordmark-dot"></div>Eudemonia
+  </div>
+  <div class="counter" id="counter">1 / 6</div>
+
+  <div class="deck">
+
+    <div class="slide active" id="s1">
+      <div class="q-wrap">
+        <div class="eyebrow">Eudemonia · ETHDenver 2026</div>
+        <h1 class="q-headline gradient-text">
+          What does it take for an institution to TRUST a blockchain-based payment?
+        </h1>
+        <div class="divider-line"></div>
+        <p class="q-sub">
+          Blockchains are faster and cheaper to use than before.<br />
+          The remaining constraint is trust: privacy, compliance, and auditability.
+        </p>
+        <div class="q-tag">
+          <div class="q-dot"></div>On-chain compliance attestation
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" id="s2">
+      <div class="pill-tag pill-gold" style="margin-bottom:16px;">Scenario</div>
+      <h2 class="s2-headline">Alice works in Johannesburg.<br />Her employer is in Amsterdam.</h2>
+
+      <div class="story-facts">
+        <div class="card story-fact">
+          <div class="story-fact-num">1</div>
+          <div class="story-fact-text">
+            Salary crosses borders. <strong>SWIFT. 1–5 days.</strong>
+            FX fees and spreads vary by month.
+          </div>
+        </div>
+        <div class="card story-fact">
+          <div class="story-fact-num">2</div>
+          <div class="story-fact-text">
+            The employer must show process compliance for each payment: KYC, approvals, audit trail.
+            <strong>Evidence is scattered across PDFs, tickets, and spreadsheets.</strong>
+          </div>
+        </div>
+        <div class="card story-fact">
+          <div class="story-fact-num">3</div>
+          <div class="story-fact-text">
+            Alice is verified, but the transfer is just a transfer.
+            <strong>No machine-verifiable proof travels with the payment.</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-close">
+        The proof and the payment live in different systems.
+        <strong>That gap repeats at scale.</strong>
+      </div>
+
+      <div class="bridge">
+        Alice is one payment, but it exposes <strong>three blockers</strong> institutions hit when they move value on
+        public rails.
+      </div>
+    </div>
+
+    <div class="slide" id="s3">
+      <div class="pill-tag pill-gold" style="margin-bottom:16px;">Observed constraints</div>
+      <h2 class="s2-headline" style="margin-bottom:24px;">Three blockers</h2>
+
+      <div class="blockers">
+        <div class="card blocker gold">
+          <div class="blocker-num gold">01</div>
+          <div class="blocker-text">
+            <div class="blocker-title">Privacy blocks coordination</div>
+            <div class="blocker-body">
+              Institutions avoid shared infrastructure if counterparties, flows, or positions become visible.
+              <strong>They will not reveal sensitive information first.</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card blocker green">
+          <div class="blocker-num green">02</div>
+          <div class="blocker-text">
+            <div class="blocker-title">Compliance breaks across the workflow</div>
+            <div class="blocker-body">
+              Compliance is not one check.
+              It spans request → approval → settlement → audit.
+              <strong>Coverage must be end-to-end, with privacy intact.</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="card blocker">
+          <div class="blocker-num">03</div>
+          <div class="blocker-text">
+            <div class="blocker-title">Trust is operational</div>
+            <div class="blocker-body">
+              The bottleneck is not throughput.
+              Institutions need <strong>enforceable controls</strong> and <strong>replayable audit evidence</strong>
+              that fit existing workflows.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" id="s4">
+      <div style="width:100%;max-width:1060px;margin:0 auto;">
+        <div class="eyebrow">Hypothesis</div>
+        <h2 class="s3-headline">
+          Tokenise the attestation, not the asset.
+        </h2>
+        <p class="s3-sub">
+          Existing providers still run checks. Approvers still approve.
+          A proof binds that process to settlement without exposing the underlying data.
+        </p>
+
+        <div class="vs-table">
+          <div class="card vs-row">
+            <div class="vs-label">Compliance checks</div>
+            <div class="vs-old">PDF report. Manual audit.</div>
+            <div class="vs-arr">→</div>
+            <div class="vs-new">Records remain private. Proof verifies checks ran and are fresh.</div>
+          </div>
+          <div class="card vs-row">
+            <div class="vs-label">Authorized sign-off</div>
+            <div class="vs-old">Email chain. Weak binding.</div>
+            <div class="vs-arr">→</div>
+            <div class="vs-new">Proof enforces N-of-M approval without publishing identities.</div>
+          </div>
+          <div class="card vs-row">
+            <div class="vs-label">Settlement</div>
+            <div class="vs-old">Assumed process.</div>
+            <div class="vs-arr">→</div>
+            <div class="vs-new">Settlement executes only if the proof verifies. Replay protection.</div>
+          </div>
+        </div>
+
+        <p
+          style="margin-top:18px;font-size:12.5px;color:var(--text-muted);line-height:1.6;border-top:1px solid var(--border);padding-top:14px;">
+          Reference case: cross-border payroll. Same framework extends to other institutional payment and tokenisation
+          flows.
+        </p>
+      </div>
+    </div>
+
+    <div class="slide" id="s5">
+      <div class="lfo-big gradient-text">Live demo.</div>
+      <p class="lfo-sub">policy → request → attest → prove → settle → audit</p>
+      <div class="live-row">
+        <div class="live-dot"></div>
+        live · ADI testnet
+      </div>
+    </div>
+
+    <div class="slide" id="s6">
+      <div class="eyebrow">Summary</div>
+      <h2 class="s6-q gradient-text">
+        Trust comes from enforceable controls and auditability, with configurable privacy.
+      </h2>
+
+      <ul class="ans-list">
+        <li>
+          <div class="a-num">1</div>
+          <span><strong>Configurable privacy —</strong> policy constrains disclosure; execution preserves
+            confidentiality where required.</span>
+        </li>
+        <li>
+          <div class="a-num">2</div>
+          <span><strong>Off-chain evidence, on-chain verification —</strong> the chain learns only commitments and proof
+            outputs.</span>
+        </li>
+        <li>
+          <div class="a-num">3</div>
+          <span><strong>Independent auditability —</strong> proofs and identifiers are permanent; underlying data
+            remains controlled.</span>
+        </li>
+      </ul>
+
+      <p class="s6-cta">
+        <strong>Where does this break?</strong> Which assumption fails first?
+      </p>
+    </div>
+
+  </div>
+
+  <div class="progress">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+
+  <div class="hint"><kbd>←</kbd><kbd>→</kbd> navigate <kbd>F</kbd> fullscreen</div>
+
+  <button class="nav-btn" id="btn-prev">‹</button>
+  <button class="nav-btn" id="btn-next">›</button>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const N = slides.length;
+    let cur = 0;
+
+    function go(n) {
+      slides[cur].classList.remove('active');
+      slides[cur].classList.add('out');
+      const prev = cur;
+      cur = Math.max(0, Math.min(n, N - 1));
+      setTimeout(() => slides[prev].classList.remove('out'), 500);
+      slides.forEach((s, i) => s.classList.toggle('active', i === cur));
+      document.getElementById('counter').textContent = `${cur + 1} / ${N}`;
+      document.getElementById('progress-fill').style.width = `${((cur + 1) / N) * 100}%`;
+    }
+
+    document.getElementById('btn-prev').addEventListener('click', () => go(cur - 1));
+    document.getElementById('btn-next').addEventListener('click', () => go(cur + 1));
+
+    document.addEventListener('keydown', e => {
+      if (['ArrowRight', ' '].includes(e.key)) { e.preventDefault(); go(cur + 1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1); }
+      else if (e.key.toLowerCase() === 'f') { document.documentElement.requestFullscreen?.(); }
+    });
+
+    go(0);
+  </script>
+</body>
+
+</html>

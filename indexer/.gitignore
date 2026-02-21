@@ -1,0 +1,15 @@
+# Secrets
+.env
+
+# Build output
+/dist
+
+# Envio generated dependency trees (root pattern covers node_modules but be explicit)
+generated/node_modules/
+
+# pnpm store (can appear at indexer root or inside generated/)
+.pnpm-store/
+generated/.pnpm-store/
+
+# Pino worker bundles emitted by thread-stream
+*.worker.js

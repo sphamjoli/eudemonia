@@ -1,0 +1,8 @@
+# Secrets
+.env
+
+# Vite build output
+/dist
+
+# TypeScript incremental build info
+*.tsbuildinfo

@@ -1,0 +1,192 @@
+enum IssuanceRequestStatus {
+  NONE
+  REQUESTED
+  CONSUMED
+  CANCELLED
+}
+
+enum PolicyLifecycleStatus {
+  NONE
+  ACTIVE
+  DEPRECATED
+}
+
+enum ProofJobStatus {
+  PENDING
+  RUNNING
+  RETRY
+  COMPLETED
+  DEAD_LETTER
+}
+
+enum PrivacyMode {
+  NONE
+  DESTINATION_PRIVATE
+  AMOUNT_PRIVATE
+  FULL_PRIVATE
+}
+
+type IssuanceRequest {
+  id: ID!
+  requestIdentifier: BigInt!
+  parametersHash: Bytes!
+  issuer: Bytes!
+  subject: Bytes!
+  beneficiary: Bytes!
+  assetIdentifier: BigInt!
+  amount: BigInt!
+  amountCommitment: Bytes!
+  destinationCommitment: Bytes!
+  payloadHash: Bytes!
+  expiryTimestamp: BigInt!
+  documentationHash: Bytes!
+  privacyMode: PrivacyMode!
+  privacyContextHash: Bytes!
+  status: IssuanceRequestStatus!
+  createdAt: BigInt!
+  updatedAt: BigInt!
+  createdBlockNumber: BigInt!
+  updatedBlockNumber: BigInt!
+  createdTxHash: Bytes!
+  updatedTxHash: Bytes!
+}
+
+type Policy {
+  id: ID!
+  policyIdentifier: BigInt!
+  policyHash: Bytes!
+  attestorSetRoot: Bytes!
+  attestorThreshold: BigInt!
+  validFromTimestamp: BigInt!
+  validUntilTimestamp: BigInt!
+  allowNone: Boolean!
+  allowDestinationPrivate: Boolean!
+  allowAmountPrivate: Boolean!
+  allowFullPrivate: Boolean!
+  allowPerIssuanceOverride: Boolean!
+  allowConfigurationUpdates: Boolean!
+  privacySchemaVersion: Int!
+  status: PolicyLifecycleStatus!
+  isActive: Boolean!
+  createdAt: BigInt!
+  updatedAt: BigInt!
+  createdBlockNumber: BigInt!
+  updatedBlockNumber: BigInt!
+  createdTxHash: Bytes!
+  updatedTxHash: Bytes!
+}
+
+type WorkerPrivacyConfiguration {
+  id: ID!
+  worker: Bytes!
+  mode: PrivacyMode!
+  spendingPublicKey: Bytes!
+  viewingPublicKey: Bytes!
+  metadataHash: Bytes!
+  schemaVersion: Int!
+  updatedAt: BigInt!
+  updatedBlockNumber: BigInt!
+  updatedTxHash: Bytes!
+}
+
+type PaymentParticipant {
+  id: ID!
+  participant: Bytes!
+  roleMask: BigInt!
+  active: Boolean!
+  profileHash: Bytes!
+  createdAt: BigInt!
+  updatedAt: BigInt!
+  updatedBlockNumber: BigInt!
+  updatedTxHash: Bytes!
+}
+
+type IssuanceAuditReceipt {
+  id: ID!
+  requestIdentifier: BigInt!
+  policyIdentifier: BigInt!
+  privacyMode: PrivacyMode!
+  privacyContextHash: Bytes!
+  parametersHash: Bytes!
+  policyHash: Bytes!
+  txHash: Bytes!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+}
+
+type IssuanceExecution {
+  id: ID!
+  requestIdentifier: BigInt!
+  policyIdentifier: BigInt!
+  parametersHash: Bytes!
+  policyHash: Bytes!
+  privacyMode: PrivacyMode!
+  beneficiary: Bytes!
+  assetIdentifier: BigInt!
+  amount: BigInt!
+  amountCommitment: Bytes!
+  destinationCommitment: Bytes!
+  payloadHash: Bytes!
+  txHash: Bytes!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+}
+
+type SettlementNote {
+  id: ID!
+  noteIdentifier: BigInt!
+  requestIdentifier: BigInt!
+  policyIdentifier: BigInt!
+  privacyMode: PrivacyMode!
+  beneficiary: Bytes!
+  amount: BigInt!
+  amountCommitment: Bytes!
+  destinationCommitment: Bytes!
+  payloadHash: Bytes!
+  txHash: Bytes!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+}
+
+type TokenTransfer {
+  id: ID!
+  txHash: Bytes!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  tokenIdentifier: BigInt!
+  operator: Bytes!
+  from: Bytes!
+  to: Bytes!
+  amount: BigInt!
+}
+
+type RawEvent {
+  id: ID!
+  contractName: String!
+  contractAddress: Bytes!
+  eventName: String!
+  txHash: Bytes!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  logIndex: BigInt!
+  topic0: Bytes
+  topic1: Bytes
+  topic2: Bytes
+  topic3: Bytes
+  payloadJson: String!
+}
+
+type ProofJob {
+  id: ID!
+  requestIdentifier: BigInt!
+  policyIdentifier: BigInt!
+  status: ProofJobStatus!
+  attemptCount: Int!
+  nextAttemptAt: BigInt!
+  lastError: String
+  lockOwner: String
+  lockedAt: BigInt
+  lastTxHash: Bytes
+  createdAt: BigInt!
+  updatedAt: BigInt!
+}

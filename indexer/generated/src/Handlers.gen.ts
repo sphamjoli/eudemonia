@@ -1,0 +1,912 @@
+/* TypeScript file generated from Handlers.res by genType. */
+
+/* eslint-disable */
+/* tslint:disable */
+
+const HandlersJS = require('./Handlers.res.js');
+
+import type {ConfidentialSettlement_EngineAddressUpdated_eventFilters as Types_ConfidentialSettlement_EngineAddressUpdated_eventFilters} from './Types.gen';
+
+import type {ConfidentialSettlement_EngineAddressUpdated_event as Types_ConfidentialSettlement_EngineAddressUpdated_event} from './Types.gen';
+
+import type {ConfidentialSettlement_Initialized_eventFilters as Types_ConfidentialSettlement_Initialized_eventFilters} from './Types.gen';
+
+import type {ConfidentialSettlement_Initialized_event as Types_ConfidentialSettlement_Initialized_event} from './Types.gen';
+
+import type {ConfidentialSettlement_NoteClaimed_eventFilters as Types_ConfidentialSettlement_NoteClaimed_eventFilters} from './Types.gen';
+
+import type {ConfidentialSettlement_NoteClaimed_event as Types_ConfidentialSettlement_NoteClaimed_event} from './Types.gen';
+
+import type {ConfidentialSettlement_NoteCommitted_eventFilters as Types_ConfidentialSettlement_NoteCommitted_eventFilters} from './Types.gen';
+
+import type {ConfidentialSettlement_NoteCommitted_event as Types_ConfidentialSettlement_NoteCommitted_event} from './Types.gen';
+
+import type {ConfidentialSettlement_OwnershipTransferStarted_eventFilters as Types_ConfidentialSettlement_OwnershipTransferStarted_eventFilters} from './Types.gen';
+
+import type {ConfidentialSettlement_OwnershipTransferStarted_event as Types_ConfidentialSettlement_OwnershipTransferStarted_event} from './Types.gen';
+
+import type {ConfidentialSettlement_OwnershipTransferred_eventFilters as Types_ConfidentialSettlement_OwnershipTransferred_eventFilters} from './Types.gen';
+
+import type {ConfidentialSettlement_OwnershipTransferred_event as Types_ConfidentialSettlement_OwnershipTransferred_event} from './Types.gen';
+
+import type {ConfidentialSettlement_Upgraded_eventFilters as Types_ConfidentialSettlement_Upgraded_eventFilters} from './Types.gen';
+
+import type {ConfidentialSettlement_Upgraded_event as Types_ConfidentialSettlement_Upgraded_event} from './Types.gen';
+
+import type {HandlerTypes_eventConfig as Types_HandlerTypes_eventConfig} from './Types.gen';
+
+import type {IssuanceRegistry_EngineAddressUpdated_eventFilters as Types_IssuanceRegistry_EngineAddressUpdated_eventFilters} from './Types.gen';
+
+import type {IssuanceRegistry_EngineAddressUpdated_event as Types_IssuanceRegistry_EngineAddressUpdated_event} from './Types.gen';
+
+import type {IssuanceRegistry_Initialized_eventFilters as Types_IssuanceRegistry_Initialized_eventFilters} from './Types.gen';
+
+import type {IssuanceRegistry_Initialized_event as Types_IssuanceRegistry_Initialized_event} from './Types.gen';
+
+import type {IssuanceRegistry_IssuanceRequestCancelled_eventFilters as Types_IssuanceRegistry_IssuanceRequestCancelled_eventFilters} from './Types.gen';
+
+import type {IssuanceRegistry_IssuanceRequestCancelled_event as Types_IssuanceRegistry_IssuanceRequestCancelled_event} from './Types.gen';
+
+import type {IssuanceRegistry_IssuanceRequestConsumed_eventFilters as Types_IssuanceRegistry_IssuanceRequestConsumed_eventFilters} from './Types.gen';
+
+import type {IssuanceRegistry_IssuanceRequestConsumed_event as Types_IssuanceRegistry_IssuanceRequestConsumed_event} from './Types.gen';
+
+import type {IssuanceRegistry_IssuanceRequestCreated_eventFilters as Types_IssuanceRegistry_IssuanceRequestCreated_eventFilters} from './Types.gen';
+
+import type {IssuanceRegistry_IssuanceRequestCreated_event as Types_IssuanceRegistry_IssuanceRequestCreated_event} from './Types.gen';
+
+import type {IssuanceRegistry_IssuanceRequestPrivacyBound_eventFilters as Types_IssuanceRegistry_IssuanceRequestPrivacyBound_eventFilters} from './Types.gen';
+
+import type {IssuanceRegistry_IssuanceRequestPrivacyBound_event as Types_IssuanceRegistry_IssuanceRequestPrivacyBound_event} from './Types.gen';
+
+import type {IssuanceRegistry_OwnershipTransferStarted_eventFilters as Types_IssuanceRegistry_OwnershipTransferStarted_eventFilters} from './Types.gen';
+
+import type {IssuanceRegistry_OwnershipTransferStarted_event as Types_IssuanceRegistry_OwnershipTransferStarted_event} from './Types.gen';
+
+import type {IssuanceRegistry_OwnershipTransferred_eventFilters as Types_IssuanceRegistry_OwnershipTransferred_eventFilters} from './Types.gen';
+
+import type {IssuanceRegistry_OwnershipTransferred_event as Types_IssuanceRegistry_OwnershipTransferred_event} from './Types.gen';
+
+import type {IssuanceRegistry_PaymentRegistryUpdated_eventFilters as Types_IssuanceRegistry_PaymentRegistryUpdated_eventFilters} from './Types.gen';
+
+import type {IssuanceRegistry_PaymentRegistryUpdated_event as Types_IssuanceRegistry_PaymentRegistryUpdated_event} from './Types.gen';
+
+import type {IssuanceRegistry_Upgraded_eventFilters as Types_IssuanceRegistry_Upgraded_eventFilters} from './Types.gen';
+
+import type {IssuanceRegistry_Upgraded_event as Types_IssuanceRegistry_Upgraded_event} from './Types.gen';
+
+import type {IssuanceRegistry_WorkerPrivacyConfigurationUpdated_eventFilters as Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_eventFilters} from './Types.gen';
+
+import type {IssuanceRegistry_WorkerPrivacyConfigurationUpdated_event as Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_event} from './Types.gen';
+
+import type {PaymentRegistry_Initialized_eventFilters as Types_PaymentRegistry_Initialized_eventFilters} from './Types.gen';
+
+import type {PaymentRegistry_Initialized_event as Types_PaymentRegistry_Initialized_event} from './Types.gen';
+
+import type {PaymentRegistry_OwnershipTransferStarted_eventFilters as Types_PaymentRegistry_OwnershipTransferStarted_eventFilters} from './Types.gen';
+
+import type {PaymentRegistry_OwnershipTransferStarted_event as Types_PaymentRegistry_OwnershipTransferStarted_event} from './Types.gen';
+
+import type {PaymentRegistry_OwnershipTransferred_eventFilters as Types_PaymentRegistry_OwnershipTransferred_eventFilters} from './Types.gen';
+
+import type {PaymentRegistry_OwnershipTransferred_event as Types_PaymentRegistry_OwnershipTransferred_event} from './Types.gen';
+
+import type {PaymentRegistry_ParticipantProfileUpdated_eventFilters as Types_PaymentRegistry_ParticipantProfileUpdated_eventFilters} from './Types.gen';
+
+import type {PaymentRegistry_ParticipantProfileUpdated_event as Types_PaymentRegistry_ParticipantProfileUpdated_event} from './Types.gen';
+
+import type {PaymentRegistry_ParticipantRoleUpdated_eventFilters as Types_PaymentRegistry_ParticipantRoleUpdated_eventFilters} from './Types.gen';
+
+import type {PaymentRegistry_ParticipantRoleUpdated_event as Types_PaymentRegistry_ParticipantRoleUpdated_event} from './Types.gen';
+
+import type {PaymentRegistry_ParticipantStatusUpdated_eventFilters as Types_PaymentRegistry_ParticipantStatusUpdated_eventFilters} from './Types.gen';
+
+import type {PaymentRegistry_ParticipantStatusUpdated_event as Types_PaymentRegistry_ParticipantStatusUpdated_event} from './Types.gen';
+
+import type {PaymentRegistry_Upgraded_eventFilters as Types_PaymentRegistry_Upgraded_eventFilters} from './Types.gen';
+
+import type {PaymentRegistry_Upgraded_event as Types_PaymentRegistry_Upgraded_event} from './Types.gen';
+
+import type {PolicyRegistry_ActivePolicyIdentifierUpdated_eventFilters as Types_PolicyRegistry_ActivePolicyIdentifierUpdated_eventFilters} from './Types.gen';
+
+import type {PolicyRegistry_ActivePolicyIdentifierUpdated_event as Types_PolicyRegistry_ActivePolicyIdentifierUpdated_event} from './Types.gen';
+
+import type {PolicyRegistry_Initialized_eventFilters as Types_PolicyRegistry_Initialized_eventFilters} from './Types.gen';
+
+import type {PolicyRegistry_Initialized_event as Types_PolicyRegistry_Initialized_event} from './Types.gen';
+
+import type {PolicyRegistry_OwnershipTransferStarted_eventFilters as Types_PolicyRegistry_OwnershipTransferStarted_eventFilters} from './Types.gen';
+
+import type {PolicyRegistry_OwnershipTransferStarted_event as Types_PolicyRegistry_OwnershipTransferStarted_event} from './Types.gen';
+
+import type {PolicyRegistry_OwnershipTransferred_eventFilters as Types_PolicyRegistry_OwnershipTransferred_eventFilters} from './Types.gen';
+
+import type {PolicyRegistry_OwnershipTransferred_event as Types_PolicyRegistry_OwnershipTransferred_event} from './Types.gen';
+
+import type {PolicyRegistry_PolicyCreated_eventFilters as Types_PolicyRegistry_PolicyCreated_eventFilters} from './Types.gen';
+
+import type {PolicyRegistry_PolicyCreated_event as Types_PolicyRegistry_PolicyCreated_event} from './Types.gen';
+
+import type {PolicyRegistry_PolicyDeprecated_eventFilters as Types_PolicyRegistry_PolicyDeprecated_eventFilters} from './Types.gen';
+
+import type {PolicyRegistry_PolicyDeprecated_event as Types_PolicyRegistry_PolicyDeprecated_event} from './Types.gen';
+
+import type {PolicyRegistry_PolicyPrivacyConstraintsUpdated_eventFilters as Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_eventFilters} from './Types.gen';
+
+import type {PolicyRegistry_PolicyPrivacyConstraintsUpdated_event as Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_event} from './Types.gen';
+
+import type {PolicyRegistry_Upgraded_eventFilters as Types_PolicyRegistry_Upgraded_eventFilters} from './Types.gen';
+
+import type {PolicyRegistry_Upgraded_event as Types_PolicyRegistry_Upgraded_event} from './Types.gen';
+
+import type {RwaToken1155_ApprovalForAll_eventFilters as Types_RwaToken1155_ApprovalForAll_eventFilters} from './Types.gen';
+
+import type {RwaToken1155_ApprovalForAll_event as Types_RwaToken1155_ApprovalForAll_event} from './Types.gen';
+
+import type {RwaToken1155_ContractURIUpdated_eventFilters as Types_RwaToken1155_ContractURIUpdated_eventFilters} from './Types.gen';
+
+import type {RwaToken1155_ContractURIUpdated_event as Types_RwaToken1155_ContractURIUpdated_event} from './Types.gen';
+
+import type {RwaToken1155_EngineAddressUpdated_eventFilters as Types_RwaToken1155_EngineAddressUpdated_eventFilters} from './Types.gen';
+
+import type {RwaToken1155_EngineAddressUpdated_event as Types_RwaToken1155_EngineAddressUpdated_event} from './Types.gen';
+
+import type {RwaToken1155_Initialized_eventFilters as Types_RwaToken1155_Initialized_eventFilters} from './Types.gen';
+
+import type {RwaToken1155_Initialized_event as Types_RwaToken1155_Initialized_event} from './Types.gen';
+
+import type {RwaToken1155_OwnershipTransferStarted_eventFilters as Types_RwaToken1155_OwnershipTransferStarted_eventFilters} from './Types.gen';
+
+import type {RwaToken1155_OwnershipTransferStarted_event as Types_RwaToken1155_OwnershipTransferStarted_event} from './Types.gen';
+
+import type {RwaToken1155_OwnershipTransferred_eventFilters as Types_RwaToken1155_OwnershipTransferred_eventFilters} from './Types.gen';
+
+import type {RwaToken1155_OwnershipTransferred_event as Types_RwaToken1155_OwnershipTransferred_event} from './Types.gen';
+
+import type {RwaToken1155_TransferBatch_eventFilters as Types_RwaToken1155_TransferBatch_eventFilters} from './Types.gen';
+
+import type {RwaToken1155_TransferBatch_event as Types_RwaToken1155_TransferBatch_event} from './Types.gen';
+
+import type {RwaToken1155_TransferSingle_eventFilters as Types_RwaToken1155_TransferSingle_eventFilters} from './Types.gen';
+
+import type {RwaToken1155_TransferSingle_event as Types_RwaToken1155_TransferSingle_event} from './Types.gen';
+
+import type {RwaToken1155_URI_eventFilters as Types_RwaToken1155_URI_eventFilters} from './Types.gen';
+
+import type {RwaToken1155_URI_event as Types_RwaToken1155_URI_event} from './Types.gen';
+
+import type {RwaToken1155_Upgraded_eventFilters as Types_RwaToken1155_Upgraded_eventFilters} from './Types.gen';
+
+import type {RwaToken1155_Upgraded_event as Types_RwaToken1155_Upgraded_event} from './Types.gen';
+
+import type {TokenisationEngine_ConfidentialSettlementUpdated_eventFilters as Types_TokenisationEngine_ConfidentialSettlementUpdated_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_ConfidentialSettlementUpdated_event as Types_TokenisationEngine_ConfidentialSettlementUpdated_event} from './Types.gen';
+
+import type {TokenisationEngine_Initialized_eventFilters as Types_TokenisationEngine_Initialized_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_Initialized_event as Types_TokenisationEngine_Initialized_event} from './Types.gen';
+
+import type {TokenisationEngine_IssuanceAuditReceipt_eventFilters as Types_TokenisationEngine_IssuanceAuditReceipt_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_IssuanceAuditReceipt_event as Types_TokenisationEngine_IssuanceAuditReceipt_event} from './Types.gen';
+
+import type {TokenisationEngine_IssuanceExecuted_eventFilters as Types_TokenisationEngine_IssuanceExecuted_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_IssuanceExecuted_event as Types_TokenisationEngine_IssuanceExecuted_event} from './Types.gen';
+
+import type {TokenisationEngine_IssuanceRegistryUpdated_eventFilters as Types_TokenisationEngine_IssuanceRegistryUpdated_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_IssuanceRegistryUpdated_event as Types_TokenisationEngine_IssuanceRegistryUpdated_event} from './Types.gen';
+
+import type {TokenisationEngine_OwnershipTransferStarted_eventFilters as Types_TokenisationEngine_OwnershipTransferStarted_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_OwnershipTransferStarted_event as Types_TokenisationEngine_OwnershipTransferStarted_event} from './Types.gen';
+
+import type {TokenisationEngine_OwnershipTransferred_eventFilters as Types_TokenisationEngine_OwnershipTransferred_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_OwnershipTransferred_event as Types_TokenisationEngine_OwnershipTransferred_event} from './Types.gen';
+
+import type {TokenisationEngine_PolicyRegistryUpdated_eventFilters as Types_TokenisationEngine_PolicyRegistryUpdated_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_PolicyRegistryUpdated_event as Types_TokenisationEngine_PolicyRegistryUpdated_event} from './Types.gen';
+
+import type {TokenisationEngine_ProgramVerificationKeyUpdated_eventFilters as Types_TokenisationEngine_ProgramVerificationKeyUpdated_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_ProgramVerificationKeyUpdated_event as Types_TokenisationEngine_ProgramVerificationKeyUpdated_event} from './Types.gen';
+
+import type {TokenisationEngine_RwaTokenUpdated_eventFilters as Types_TokenisationEngine_RwaTokenUpdated_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_RwaTokenUpdated_event as Types_TokenisationEngine_RwaTokenUpdated_event} from './Types.gen';
+
+import type {TokenisationEngine_Sp1VerifierUpdated_eventFilters as Types_TokenisationEngine_Sp1VerifierUpdated_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_Sp1VerifierUpdated_event as Types_TokenisationEngine_Sp1VerifierUpdated_event} from './Types.gen';
+
+import type {TokenisationEngine_UmbraBatchSendUpdated_eventFilters as Types_TokenisationEngine_UmbraBatchSendUpdated_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_UmbraBatchSendUpdated_event as Types_TokenisationEngine_UmbraBatchSendUpdated_event} from './Types.gen';
+
+import type {TokenisationEngine_UmbraCoreUpdated_eventFilters as Types_TokenisationEngine_UmbraCoreUpdated_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_UmbraCoreUpdated_event as Types_TokenisationEngine_UmbraCoreUpdated_event} from './Types.gen';
+
+import type {TokenisationEngine_Upgraded_eventFilters as Types_TokenisationEngine_Upgraded_eventFilters} from './Types.gen';
+
+import type {TokenisationEngine_Upgraded_event as Types_TokenisationEngine_Upgraded_event} from './Types.gen';
+
+import type {chain as Types_chain} from './Types.gen';
+
+import type {contractRegistrations as Types_contractRegistrations} from './Types.gen';
+
+import type {fnWithEventConfig as Types_fnWithEventConfig} from './Types.gen';
+
+import type {genericContractRegisterArgs as Internal_genericContractRegisterArgs} from 'envio/src/Internal.gen';
+
+import type {genericContractRegister as Internal_genericContractRegister} from 'envio/src/Internal.gen';
+
+import type {genericHandlerArgs as Internal_genericHandlerArgs} from 'envio/src/Internal.gen';
+
+import type {genericHandlerWithLoader as Internal_genericHandlerWithLoader} from 'envio/src/Internal.gen';
+
+import type {genericHandler as Internal_genericHandler} from 'envio/src/Internal.gen';
+
+import type {genericLoaderArgs as Internal_genericLoaderArgs} from 'envio/src/Internal.gen';
+
+import type {genericLoader as Internal_genericLoader} from 'envio/src/Internal.gen';
+
+import type {handlerContext as Types_handlerContext} from './Types.gen';
+
+import type {loaderContext as Types_loaderContext} from './Types.gen';
+
+import type {onBlockArgs as Envio_onBlockArgs} from 'envio/src/Envio.gen';
+
+import type {onBlockOptions as Envio_onBlockOptions} from 'envio/src/Envio.gen';
+
+export const ConfidentialSettlement_EngineAddressUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_EngineAddressUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_EngineAddressUpdated_eventFilters>> = HandlersJS.ConfidentialSettlement.EngineAddressUpdated.contractRegister as any;
+
+export const ConfidentialSettlement_EngineAddressUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_EngineAddressUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_EngineAddressUpdated_eventFilters>> = HandlersJS.ConfidentialSettlement.EngineAddressUpdated.handler as any;
+
+export const ConfidentialSettlement_EngineAddressUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_EngineAddressUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_EngineAddressUpdated_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_EngineAddressUpdated_eventFilters>) => void = HandlersJS.ConfidentialSettlement.EngineAddressUpdated.handlerWithLoader as any;
+
+export const ConfidentialSettlement_Initialized_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_Initialized_eventFilters>> = HandlersJS.ConfidentialSettlement.Initialized.contractRegister as any;
+
+export const ConfidentialSettlement_Initialized_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_Initialized_eventFilters>> = HandlersJS.ConfidentialSettlement.Initialized.handler as any;
+
+export const ConfidentialSettlement_Initialized_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_Initialized_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_Initialized_eventFilters>) => void = HandlersJS.ConfidentialSettlement.Initialized.handlerWithLoader as any;
+
+export const ConfidentialSettlement_NoteClaimed_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_NoteClaimed_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_NoteClaimed_eventFilters>> = HandlersJS.ConfidentialSettlement.NoteClaimed.contractRegister as any;
+
+export const ConfidentialSettlement_NoteClaimed_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_NoteClaimed_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_NoteClaimed_eventFilters>> = HandlersJS.ConfidentialSettlement.NoteClaimed.handler as any;
+
+export const ConfidentialSettlement_NoteClaimed_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_NoteClaimed_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_NoteClaimed_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_NoteClaimed_eventFilters>) => void = HandlersJS.ConfidentialSettlement.NoteClaimed.handlerWithLoader as any;
+
+export const ConfidentialSettlement_NoteCommitted_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_NoteCommitted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_NoteCommitted_eventFilters>> = HandlersJS.ConfidentialSettlement.NoteCommitted.contractRegister as any;
+
+export const ConfidentialSettlement_NoteCommitted_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_NoteCommitted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_NoteCommitted_eventFilters>> = HandlersJS.ConfidentialSettlement.NoteCommitted.handler as any;
+
+export const ConfidentialSettlement_NoteCommitted_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_NoteCommitted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_NoteCommitted_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_NoteCommitted_eventFilters>) => void = HandlersJS.ConfidentialSettlement.NoteCommitted.handlerWithLoader as any;
+
+export const ConfidentialSettlement_OwnershipTransferStarted_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_OwnershipTransferStarted_eventFilters>> = HandlersJS.ConfidentialSettlement.OwnershipTransferStarted.contractRegister as any;
+
+export const ConfidentialSettlement_OwnershipTransferStarted_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_OwnershipTransferStarted_eventFilters>> = HandlersJS.ConfidentialSettlement.OwnershipTransferStarted.handler as any;
+
+export const ConfidentialSettlement_OwnershipTransferStarted_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_OwnershipTransferStarted_eventFilters>) => void = HandlersJS.ConfidentialSettlement.OwnershipTransferStarted.handlerWithLoader as any;
+
+export const ConfidentialSettlement_OwnershipTransferred_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_OwnershipTransferred_eventFilters>> = HandlersJS.ConfidentialSettlement.OwnershipTransferred.contractRegister as any;
+
+export const ConfidentialSettlement_OwnershipTransferred_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_OwnershipTransferred_eventFilters>> = HandlersJS.ConfidentialSettlement.OwnershipTransferred.handler as any;
+
+export const ConfidentialSettlement_OwnershipTransferred_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_OwnershipTransferred_eventFilters>) => void = HandlersJS.ConfidentialSettlement.OwnershipTransferred.handlerWithLoader as any;
+
+export const ConfidentialSettlement_Upgraded_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_Upgraded_eventFilters>> = HandlersJS.ConfidentialSettlement.Upgraded.contractRegister as any;
+
+export const ConfidentialSettlement_Upgraded_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_Upgraded_eventFilters>> = HandlersJS.ConfidentialSettlement.Upgraded.handler as any;
+
+export const ConfidentialSettlement_Upgraded_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_Upgraded_eventFilters>) => void = HandlersJS.ConfidentialSettlement.Upgraded.handlerWithLoader as any;
+
+export const IssuanceRegistry_EngineAddressUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_EngineAddressUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_EngineAddressUpdated_eventFilters>> = HandlersJS.IssuanceRegistry.EngineAddressUpdated.contractRegister as any;
+
+export const IssuanceRegistry_EngineAddressUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_EngineAddressUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_EngineAddressUpdated_eventFilters>> = HandlersJS.IssuanceRegistry.EngineAddressUpdated.handler as any;
+
+export const IssuanceRegistry_EngineAddressUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_EngineAddressUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_EngineAddressUpdated_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_EngineAddressUpdated_eventFilters>) => void = HandlersJS.IssuanceRegistry.EngineAddressUpdated.handlerWithLoader as any;
+
+export const IssuanceRegistry_Initialized_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_Initialized_eventFilters>> = HandlersJS.IssuanceRegistry.Initialized.contractRegister as any;
+
+export const IssuanceRegistry_Initialized_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_Initialized_eventFilters>> = HandlersJS.IssuanceRegistry.Initialized.handler as any;
+
+export const IssuanceRegistry_Initialized_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_Initialized_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_Initialized_eventFilters>) => void = HandlersJS.IssuanceRegistry.Initialized.handlerWithLoader as any;
+
+export const IssuanceRegistry_IssuanceRequestCancelled_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_IssuanceRequestCancelled_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestCancelled_eventFilters>> = HandlersJS.IssuanceRegistry.IssuanceRequestCancelled.contractRegister as any;
+
+export const IssuanceRegistry_IssuanceRequestCancelled_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestCancelled_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestCancelled_eventFilters>> = HandlersJS.IssuanceRegistry.IssuanceRequestCancelled.handler as any;
+
+export const IssuanceRegistry_IssuanceRequestCancelled_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_IssuanceRequestCancelled_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestCancelled_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_IssuanceRequestCancelled_eventFilters>) => void = HandlersJS.IssuanceRegistry.IssuanceRequestCancelled.handlerWithLoader as any;
+
+export const IssuanceRegistry_IssuanceRequestConsumed_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_IssuanceRequestConsumed_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestConsumed_eventFilters>> = HandlersJS.IssuanceRegistry.IssuanceRequestConsumed.contractRegister as any;
+
+export const IssuanceRegistry_IssuanceRequestConsumed_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestConsumed_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestConsumed_eventFilters>> = HandlersJS.IssuanceRegistry.IssuanceRequestConsumed.handler as any;
+
+export const IssuanceRegistry_IssuanceRequestConsumed_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_IssuanceRequestConsumed_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestConsumed_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_IssuanceRequestConsumed_eventFilters>) => void = HandlersJS.IssuanceRegistry.IssuanceRequestConsumed.handlerWithLoader as any;
+
+export const IssuanceRegistry_IssuanceRequestCreated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_IssuanceRequestCreated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestCreated_eventFilters>> = HandlersJS.IssuanceRegistry.IssuanceRequestCreated.contractRegister as any;
+
+export const IssuanceRegistry_IssuanceRequestCreated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestCreated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestCreated_eventFilters>> = HandlersJS.IssuanceRegistry.IssuanceRequestCreated.handler as any;
+
+export const IssuanceRegistry_IssuanceRequestCreated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_IssuanceRequestCreated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestCreated_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_IssuanceRequestCreated_eventFilters>) => void = HandlersJS.IssuanceRegistry.IssuanceRequestCreated.handlerWithLoader as any;
+
+export const IssuanceRegistry_IssuanceRequestPrivacyBound_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_eventFilters>> = HandlersJS.IssuanceRegistry.IssuanceRequestPrivacyBound.contractRegister as any;
+
+export const IssuanceRegistry_IssuanceRequestPrivacyBound_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_eventFilters>> = HandlersJS.IssuanceRegistry.IssuanceRequestPrivacyBound.handler as any;
+
+export const IssuanceRegistry_IssuanceRequestPrivacyBound_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_IssuanceRequestPrivacyBound_eventFilters>) => void = HandlersJS.IssuanceRegistry.IssuanceRequestPrivacyBound.handlerWithLoader as any;
+
+export const IssuanceRegistry_PaymentRegistryUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_PaymentRegistryUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_PaymentRegistryUpdated_eventFilters>> = HandlersJS.IssuanceRegistry.PaymentRegistryUpdated.contractRegister as any;
+
+export const IssuanceRegistry_PaymentRegistryUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_PaymentRegistryUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_PaymentRegistryUpdated_eventFilters>> = HandlersJS.IssuanceRegistry.PaymentRegistryUpdated.handler as any;
+
+export const IssuanceRegistry_PaymentRegistryUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_PaymentRegistryUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_PaymentRegistryUpdated_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_PaymentRegistryUpdated_eventFilters>) => void = HandlersJS.IssuanceRegistry.PaymentRegistryUpdated.handlerWithLoader as any;
+
+export const IssuanceRegistry_WorkerPrivacyConfigurationUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_eventFilters>> = HandlersJS.IssuanceRegistry.WorkerPrivacyConfigurationUpdated.contractRegister as any;
+
+export const IssuanceRegistry_WorkerPrivacyConfigurationUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_eventFilters>> = HandlersJS.IssuanceRegistry.WorkerPrivacyConfigurationUpdated.handler as any;
+
+export const IssuanceRegistry_WorkerPrivacyConfigurationUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_eventFilters>) => void = HandlersJS.IssuanceRegistry.WorkerPrivacyConfigurationUpdated.handlerWithLoader as any;
+
+export const IssuanceRegistry_OwnershipTransferStarted_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_OwnershipTransferStarted_eventFilters>> = HandlersJS.IssuanceRegistry.OwnershipTransferStarted.contractRegister as any;
+
+export const IssuanceRegistry_OwnershipTransferStarted_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_OwnershipTransferStarted_eventFilters>> = HandlersJS.IssuanceRegistry.OwnershipTransferStarted.handler as any;
+
+export const IssuanceRegistry_OwnershipTransferStarted_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_OwnershipTransferStarted_eventFilters>) => void = HandlersJS.IssuanceRegistry.OwnershipTransferStarted.handlerWithLoader as any;
+
+export const IssuanceRegistry_OwnershipTransferred_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_OwnershipTransferred_eventFilters>> = HandlersJS.IssuanceRegistry.OwnershipTransferred.contractRegister as any;
+
+export const IssuanceRegistry_OwnershipTransferred_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_OwnershipTransferred_eventFilters>> = HandlersJS.IssuanceRegistry.OwnershipTransferred.handler as any;
+
+export const IssuanceRegistry_OwnershipTransferred_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_OwnershipTransferred_eventFilters>) => void = HandlersJS.IssuanceRegistry.OwnershipTransferred.handlerWithLoader as any;
+
+export const IssuanceRegistry_Upgraded_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_Upgraded_eventFilters>> = HandlersJS.IssuanceRegistry.Upgraded.contractRegister as any;
+
+export const IssuanceRegistry_Upgraded_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_Upgraded_eventFilters>> = HandlersJS.IssuanceRegistry.Upgraded.handler as any;
+
+export const IssuanceRegistry_Upgraded_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_Upgraded_eventFilters>) => void = HandlersJS.IssuanceRegistry.Upgraded.handlerWithLoader as any;
+
+export const PaymentRegistry_Initialized_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_Initialized_eventFilters>> = HandlersJS.PaymentRegistry.Initialized.contractRegister as any;
+
+export const PaymentRegistry_Initialized_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_Initialized_eventFilters>> = HandlersJS.PaymentRegistry.Initialized.handler as any;
+
+export const PaymentRegistry_Initialized_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_Initialized_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_Initialized_eventFilters>) => void = HandlersJS.PaymentRegistry.Initialized.handlerWithLoader as any;
+
+export const PaymentRegistry_OwnershipTransferStarted_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_OwnershipTransferStarted_eventFilters>> = HandlersJS.PaymentRegistry.OwnershipTransferStarted.contractRegister as any;
+
+export const PaymentRegistry_OwnershipTransferStarted_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_OwnershipTransferStarted_eventFilters>> = HandlersJS.PaymentRegistry.OwnershipTransferStarted.handler as any;
+
+export const PaymentRegistry_OwnershipTransferStarted_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_OwnershipTransferStarted_eventFilters>) => void = HandlersJS.PaymentRegistry.OwnershipTransferStarted.handlerWithLoader as any;
+
+export const PaymentRegistry_OwnershipTransferred_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_OwnershipTransferred_eventFilters>> = HandlersJS.PaymentRegistry.OwnershipTransferred.contractRegister as any;
+
+export const PaymentRegistry_OwnershipTransferred_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_OwnershipTransferred_eventFilters>> = HandlersJS.PaymentRegistry.OwnershipTransferred.handler as any;
+
+export const PaymentRegistry_OwnershipTransferred_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_OwnershipTransferred_eventFilters>) => void = HandlersJS.PaymentRegistry.OwnershipTransferred.handlerWithLoader as any;
+
+export const PaymentRegistry_ParticipantProfileUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_ParticipantProfileUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantProfileUpdated_eventFilters>> = HandlersJS.PaymentRegistry.ParticipantProfileUpdated.contractRegister as any;
+
+export const PaymentRegistry_ParticipantProfileUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantProfileUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantProfileUpdated_eventFilters>> = HandlersJS.PaymentRegistry.ParticipantProfileUpdated.handler as any;
+
+export const PaymentRegistry_ParticipantProfileUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_ParticipantProfileUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantProfileUpdated_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_ParticipantProfileUpdated_eventFilters>) => void = HandlersJS.PaymentRegistry.ParticipantProfileUpdated.handlerWithLoader as any;
+
+export const PaymentRegistry_ParticipantRoleUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_ParticipantRoleUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantRoleUpdated_eventFilters>> = HandlersJS.PaymentRegistry.ParticipantRoleUpdated.contractRegister as any;
+
+export const PaymentRegistry_ParticipantRoleUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantRoleUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantRoleUpdated_eventFilters>> = HandlersJS.PaymentRegistry.ParticipantRoleUpdated.handler as any;
+
+export const PaymentRegistry_ParticipantRoleUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_ParticipantRoleUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantRoleUpdated_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_ParticipantRoleUpdated_eventFilters>) => void = HandlersJS.PaymentRegistry.ParticipantRoleUpdated.handlerWithLoader as any;
+
+export const PaymentRegistry_ParticipantStatusUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_ParticipantStatusUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantStatusUpdated_eventFilters>> = HandlersJS.PaymentRegistry.ParticipantStatusUpdated.contractRegister as any;
+
+export const PaymentRegistry_ParticipantStatusUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantStatusUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantStatusUpdated_eventFilters>> = HandlersJS.PaymentRegistry.ParticipantStatusUpdated.handler as any;
+
+export const PaymentRegistry_ParticipantStatusUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_ParticipantStatusUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantStatusUpdated_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_ParticipantStatusUpdated_eventFilters>) => void = HandlersJS.PaymentRegistry.ParticipantStatusUpdated.handlerWithLoader as any;
+
+export const PaymentRegistry_Upgraded_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_Upgraded_eventFilters>> = HandlersJS.PaymentRegistry.Upgraded.contractRegister as any;
+
+export const PaymentRegistry_Upgraded_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_Upgraded_eventFilters>> = HandlersJS.PaymentRegistry.Upgraded.handler as any;
+
+export const PaymentRegistry_Upgraded_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_Upgraded_eventFilters>) => void = HandlersJS.PaymentRegistry.Upgraded.handlerWithLoader as any;
+
+export const PolicyRegistry_ActivePolicyIdentifierUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_eventFilters>> = HandlersJS.PolicyRegistry.ActivePolicyIdentifierUpdated.contractRegister as any;
+
+export const PolicyRegistry_ActivePolicyIdentifierUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_eventFilters>> = HandlersJS.PolicyRegistry.ActivePolicyIdentifierUpdated.handler as any;
+
+export const PolicyRegistry_ActivePolicyIdentifierUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_ActivePolicyIdentifierUpdated_eventFilters>) => void = HandlersJS.PolicyRegistry.ActivePolicyIdentifierUpdated.handlerWithLoader as any;
+
+export const PolicyRegistry_Initialized_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_Initialized_eventFilters>> = HandlersJS.PolicyRegistry.Initialized.contractRegister as any;
+
+export const PolicyRegistry_Initialized_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_Initialized_eventFilters>> = HandlersJS.PolicyRegistry.Initialized.handler as any;
+
+export const PolicyRegistry_Initialized_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_Initialized_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_Initialized_eventFilters>) => void = HandlersJS.PolicyRegistry.Initialized.handlerWithLoader as any;
+
+export const PolicyRegistry_OwnershipTransferStarted_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_OwnershipTransferStarted_eventFilters>> = HandlersJS.PolicyRegistry.OwnershipTransferStarted.contractRegister as any;
+
+export const PolicyRegistry_OwnershipTransferStarted_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_OwnershipTransferStarted_eventFilters>> = HandlersJS.PolicyRegistry.OwnershipTransferStarted.handler as any;
+
+export const PolicyRegistry_OwnershipTransferStarted_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_OwnershipTransferStarted_eventFilters>) => void = HandlersJS.PolicyRegistry.OwnershipTransferStarted.handlerWithLoader as any;
+
+export const PolicyRegistry_OwnershipTransferred_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_OwnershipTransferred_eventFilters>> = HandlersJS.PolicyRegistry.OwnershipTransferred.contractRegister as any;
+
+export const PolicyRegistry_OwnershipTransferred_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_OwnershipTransferred_eventFilters>> = HandlersJS.PolicyRegistry.OwnershipTransferred.handler as any;
+
+export const PolicyRegistry_OwnershipTransferred_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_OwnershipTransferred_eventFilters>) => void = HandlersJS.PolicyRegistry.OwnershipTransferred.handlerWithLoader as any;
+
+export const PolicyRegistry_PolicyCreated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_PolicyCreated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyCreated_eventFilters>> = HandlersJS.PolicyRegistry.PolicyCreated.contractRegister as any;
+
+export const PolicyRegistry_PolicyCreated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyCreated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyCreated_eventFilters>> = HandlersJS.PolicyRegistry.PolicyCreated.handler as any;
+
+export const PolicyRegistry_PolicyCreated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_PolicyCreated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyCreated_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_PolicyCreated_eventFilters>) => void = HandlersJS.PolicyRegistry.PolicyCreated.handlerWithLoader as any;
+
+export const PolicyRegistry_PolicyDeprecated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_PolicyDeprecated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyDeprecated_eventFilters>> = HandlersJS.PolicyRegistry.PolicyDeprecated.contractRegister as any;
+
+export const PolicyRegistry_PolicyDeprecated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyDeprecated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyDeprecated_eventFilters>> = HandlersJS.PolicyRegistry.PolicyDeprecated.handler as any;
+
+export const PolicyRegistry_PolicyDeprecated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_PolicyDeprecated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyDeprecated_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_PolicyDeprecated_eventFilters>) => void = HandlersJS.PolicyRegistry.PolicyDeprecated.handlerWithLoader as any;
+
+export const PolicyRegistry_PolicyPrivacyConstraintsUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_eventFilters>> = HandlersJS.PolicyRegistry.PolicyPrivacyConstraintsUpdated.contractRegister as any;
+
+export const PolicyRegistry_PolicyPrivacyConstraintsUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_eventFilters>> = HandlersJS.PolicyRegistry.PolicyPrivacyConstraintsUpdated.handler as any;
+
+export const PolicyRegistry_PolicyPrivacyConstraintsUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_eventFilters>) => void = HandlersJS.PolicyRegistry.PolicyPrivacyConstraintsUpdated.handlerWithLoader as any;
+
+export const PolicyRegistry_Upgraded_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_Upgraded_eventFilters>> = HandlersJS.PolicyRegistry.Upgraded.contractRegister as any;
+
+export const PolicyRegistry_Upgraded_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_Upgraded_eventFilters>> = HandlersJS.PolicyRegistry.Upgraded.handler as any;
+
+export const PolicyRegistry_Upgraded_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_Upgraded_eventFilters>) => void = HandlersJS.PolicyRegistry.Upgraded.handlerWithLoader as any;
+
+export const RwaToken1155_ApprovalForAll_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_ApprovalForAll_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_ApprovalForAll_eventFilters>> = HandlersJS.RwaToken1155.ApprovalForAll.contractRegister as any;
+
+export const RwaToken1155_ApprovalForAll_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_ApprovalForAll_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_ApprovalForAll_eventFilters>> = HandlersJS.RwaToken1155.ApprovalForAll.handler as any;
+
+export const RwaToken1155_ApprovalForAll_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_ApprovalForAll_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_ApprovalForAll_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_ApprovalForAll_eventFilters>) => void = HandlersJS.RwaToken1155.ApprovalForAll.handlerWithLoader as any;
+
+export const RwaToken1155_ContractURIUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_ContractURIUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_ContractURIUpdated_eventFilters>> = HandlersJS.RwaToken1155.ContractURIUpdated.contractRegister as any;
+
+export const RwaToken1155_ContractURIUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_ContractURIUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_ContractURIUpdated_eventFilters>> = HandlersJS.RwaToken1155.ContractURIUpdated.handler as any;
+
+export const RwaToken1155_ContractURIUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_ContractURIUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_ContractURIUpdated_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_ContractURIUpdated_eventFilters>) => void = HandlersJS.RwaToken1155.ContractURIUpdated.handlerWithLoader as any;
+
+export const RwaToken1155_EngineAddressUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_EngineAddressUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_EngineAddressUpdated_eventFilters>> = HandlersJS.RwaToken1155.EngineAddressUpdated.contractRegister as any;
+
+export const RwaToken1155_EngineAddressUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_EngineAddressUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_EngineAddressUpdated_eventFilters>> = HandlersJS.RwaToken1155.EngineAddressUpdated.handler as any;
+
+export const RwaToken1155_EngineAddressUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_EngineAddressUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_EngineAddressUpdated_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_EngineAddressUpdated_eventFilters>) => void = HandlersJS.RwaToken1155.EngineAddressUpdated.handlerWithLoader as any;
+
+export const RwaToken1155_Initialized_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_Initialized_eventFilters>> = HandlersJS.RwaToken1155.Initialized.contractRegister as any;
+
+export const RwaToken1155_Initialized_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_Initialized_eventFilters>> = HandlersJS.RwaToken1155.Initialized.handler as any;
+
+export const RwaToken1155_Initialized_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_Initialized_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_Initialized_eventFilters>) => void = HandlersJS.RwaToken1155.Initialized.handlerWithLoader as any;
+
+export const RwaToken1155_OwnershipTransferStarted_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_OwnershipTransferStarted_eventFilters>> = HandlersJS.RwaToken1155.OwnershipTransferStarted.contractRegister as any;
+
+export const RwaToken1155_OwnershipTransferStarted_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_OwnershipTransferStarted_eventFilters>> = HandlersJS.RwaToken1155.OwnershipTransferStarted.handler as any;
+
+export const RwaToken1155_OwnershipTransferStarted_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_OwnershipTransferStarted_eventFilters>) => void = HandlersJS.RwaToken1155.OwnershipTransferStarted.handlerWithLoader as any;
+
+export const RwaToken1155_OwnershipTransferred_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_OwnershipTransferred_eventFilters>> = HandlersJS.RwaToken1155.OwnershipTransferred.contractRegister as any;
+
+export const RwaToken1155_OwnershipTransferred_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_OwnershipTransferred_eventFilters>> = HandlersJS.RwaToken1155.OwnershipTransferred.handler as any;
+
+export const RwaToken1155_OwnershipTransferred_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_OwnershipTransferred_eventFilters>) => void = HandlersJS.RwaToken1155.OwnershipTransferred.handlerWithLoader as any;
+
+export const RwaToken1155_TransferBatch_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_TransferBatch_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_TransferBatch_eventFilters>> = HandlersJS.RwaToken1155.TransferBatch.contractRegister as any;
+
+export const RwaToken1155_TransferBatch_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_TransferBatch_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_TransferBatch_eventFilters>> = HandlersJS.RwaToken1155.TransferBatch.handler as any;
+
+export const RwaToken1155_TransferBatch_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_TransferBatch_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_TransferBatch_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_TransferBatch_eventFilters>) => void = HandlersJS.RwaToken1155.TransferBatch.handlerWithLoader as any;
+
+export const RwaToken1155_TransferSingle_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_TransferSingle_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_TransferSingle_eventFilters>> = HandlersJS.RwaToken1155.TransferSingle.contractRegister as any;
+
+export const RwaToken1155_TransferSingle_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_TransferSingle_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_TransferSingle_eventFilters>> = HandlersJS.RwaToken1155.TransferSingle.handler as any;
+
+export const RwaToken1155_TransferSingle_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_TransferSingle_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_TransferSingle_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_TransferSingle_eventFilters>) => void = HandlersJS.RwaToken1155.TransferSingle.handlerWithLoader as any;
+
+export const RwaToken1155_URI_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_URI_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_URI_eventFilters>> = HandlersJS.RwaToken1155.URI.contractRegister as any;
+
+export const RwaToken1155_URI_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_URI_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_URI_eventFilters>> = HandlersJS.RwaToken1155.URI.handler as any;
+
+export const RwaToken1155_URI_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_URI_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_URI_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_URI_eventFilters>) => void = HandlersJS.RwaToken1155.URI.handlerWithLoader as any;
+
+export const RwaToken1155_Upgraded_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_Upgraded_eventFilters>> = HandlersJS.RwaToken1155.Upgraded.contractRegister as any;
+
+export const RwaToken1155_Upgraded_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_Upgraded_eventFilters>> = HandlersJS.RwaToken1155.Upgraded.handler as any;
+
+export const RwaToken1155_Upgraded_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_Upgraded_eventFilters>) => void = HandlersJS.RwaToken1155.Upgraded.handlerWithLoader as any;
+
+export const TokenisationEngine_Initialized_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Initialized_eventFilters>> = HandlersJS.TokenisationEngine.Initialized.contractRegister as any;
+
+export const TokenisationEngine_Initialized_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Initialized_eventFilters>> = HandlersJS.TokenisationEngine.Initialized.handler as any;
+
+export const TokenisationEngine_Initialized_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Initialized_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_Initialized_eventFilters>) => void = HandlersJS.TokenisationEngine.Initialized.handlerWithLoader as any;
+
+export const TokenisationEngine_IssuanceAuditReceipt_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_IssuanceAuditReceipt_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceAuditReceipt_eventFilters>> = HandlersJS.TokenisationEngine.IssuanceAuditReceipt.contractRegister as any;
+
+export const TokenisationEngine_IssuanceAuditReceipt_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceAuditReceipt_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceAuditReceipt_eventFilters>> = HandlersJS.TokenisationEngine.IssuanceAuditReceipt.handler as any;
+
+export const TokenisationEngine_IssuanceAuditReceipt_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_IssuanceAuditReceipt_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceAuditReceipt_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_IssuanceAuditReceipt_eventFilters>) => void = HandlersJS.TokenisationEngine.IssuanceAuditReceipt.handlerWithLoader as any;
+
+export const TokenisationEngine_IssuanceExecuted_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_IssuanceExecuted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceExecuted_eventFilters>> = HandlersJS.TokenisationEngine.IssuanceExecuted.contractRegister as any;
+
+export const TokenisationEngine_IssuanceExecuted_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceExecuted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceExecuted_eventFilters>> = HandlersJS.TokenisationEngine.IssuanceExecuted.handler as any;
+
+export const TokenisationEngine_IssuanceExecuted_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_IssuanceExecuted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceExecuted_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_IssuanceExecuted_eventFilters>) => void = HandlersJS.TokenisationEngine.IssuanceExecuted.handlerWithLoader as any;
+
+export const TokenisationEngine_IssuanceRegistryUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_IssuanceRegistryUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceRegistryUpdated_eventFilters>> = HandlersJS.TokenisationEngine.IssuanceRegistryUpdated.contractRegister as any;
+
+export const TokenisationEngine_IssuanceRegistryUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceRegistryUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceRegistryUpdated_eventFilters>> = HandlersJS.TokenisationEngine.IssuanceRegistryUpdated.handler as any;
+
+export const TokenisationEngine_IssuanceRegistryUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_IssuanceRegistryUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceRegistryUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_IssuanceRegistryUpdated_eventFilters>) => void = HandlersJS.TokenisationEngine.IssuanceRegistryUpdated.handlerWithLoader as any;
+
+export const TokenisationEngine_OwnershipTransferStarted_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_OwnershipTransferStarted_eventFilters>> = HandlersJS.TokenisationEngine.OwnershipTransferStarted.contractRegister as any;
+
+export const TokenisationEngine_OwnershipTransferStarted_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_OwnershipTransferStarted_eventFilters>> = HandlersJS.TokenisationEngine.OwnershipTransferStarted.handler as any;
+
+export const TokenisationEngine_OwnershipTransferStarted_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_OwnershipTransferStarted_eventFilters>) => void = HandlersJS.TokenisationEngine.OwnershipTransferStarted.handlerWithLoader as any;
+
+export const TokenisationEngine_OwnershipTransferred_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_OwnershipTransferred_eventFilters>> = HandlersJS.TokenisationEngine.OwnershipTransferred.contractRegister as any;
+
+export const TokenisationEngine_OwnershipTransferred_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_OwnershipTransferred_eventFilters>> = HandlersJS.TokenisationEngine.OwnershipTransferred.handler as any;
+
+export const TokenisationEngine_OwnershipTransferred_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_OwnershipTransferred_eventFilters>) => void = HandlersJS.TokenisationEngine.OwnershipTransferred.handlerWithLoader as any;
+
+export const TokenisationEngine_PolicyRegistryUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_PolicyRegistryUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_PolicyRegistryUpdated_eventFilters>> = HandlersJS.TokenisationEngine.PolicyRegistryUpdated.contractRegister as any;
+
+export const TokenisationEngine_PolicyRegistryUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_PolicyRegistryUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_PolicyRegistryUpdated_eventFilters>> = HandlersJS.TokenisationEngine.PolicyRegistryUpdated.handler as any;
+
+export const TokenisationEngine_PolicyRegistryUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_PolicyRegistryUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_PolicyRegistryUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_PolicyRegistryUpdated_eventFilters>) => void = HandlersJS.TokenisationEngine.PolicyRegistryUpdated.handlerWithLoader as any;
+
+export const TokenisationEngine_ProgramVerificationKeyUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_ProgramVerificationKeyUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_ProgramVerificationKeyUpdated_eventFilters>> = HandlersJS.TokenisationEngine.ProgramVerificationKeyUpdated.contractRegister as any;
+
+export const TokenisationEngine_ProgramVerificationKeyUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_ProgramVerificationKeyUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_ProgramVerificationKeyUpdated_eventFilters>> = HandlersJS.TokenisationEngine.ProgramVerificationKeyUpdated.handler as any;
+
+export const TokenisationEngine_ProgramVerificationKeyUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_ProgramVerificationKeyUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_ProgramVerificationKeyUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_ProgramVerificationKeyUpdated_eventFilters>) => void = HandlersJS.TokenisationEngine.ProgramVerificationKeyUpdated.handlerWithLoader as any;
+
+export const TokenisationEngine_RwaTokenUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_RwaTokenUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_RwaTokenUpdated_eventFilters>> = HandlersJS.TokenisationEngine.RwaTokenUpdated.contractRegister as any;
+
+export const TokenisationEngine_RwaTokenUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_RwaTokenUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_RwaTokenUpdated_eventFilters>> = HandlersJS.TokenisationEngine.RwaTokenUpdated.handler as any;
+
+export const TokenisationEngine_RwaTokenUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_RwaTokenUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_RwaTokenUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_RwaTokenUpdated_eventFilters>) => void = HandlersJS.TokenisationEngine.RwaTokenUpdated.handlerWithLoader as any;
+
+export const TokenisationEngine_ConfidentialSettlementUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_ConfidentialSettlementUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_ConfidentialSettlementUpdated_eventFilters>> = HandlersJS.TokenisationEngine.ConfidentialSettlementUpdated.contractRegister as any;
+
+export const TokenisationEngine_ConfidentialSettlementUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_ConfidentialSettlementUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_ConfidentialSettlementUpdated_eventFilters>> = HandlersJS.TokenisationEngine.ConfidentialSettlementUpdated.handler as any;
+
+export const TokenisationEngine_ConfidentialSettlementUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_ConfidentialSettlementUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_ConfidentialSettlementUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_ConfidentialSettlementUpdated_eventFilters>) => void = HandlersJS.TokenisationEngine.ConfidentialSettlementUpdated.handlerWithLoader as any;
+
+export const TokenisationEngine_Sp1VerifierUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_Sp1VerifierUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Sp1VerifierUpdated_eventFilters>> = HandlersJS.TokenisationEngine.Sp1VerifierUpdated.contractRegister as any;
+
+export const TokenisationEngine_Sp1VerifierUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Sp1VerifierUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Sp1VerifierUpdated_eventFilters>> = HandlersJS.TokenisationEngine.Sp1VerifierUpdated.handler as any;
+
+export const TokenisationEngine_Sp1VerifierUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_Sp1VerifierUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Sp1VerifierUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_Sp1VerifierUpdated_eventFilters>) => void = HandlersJS.TokenisationEngine.Sp1VerifierUpdated.handlerWithLoader as any;
+
+export const TokenisationEngine_UmbraBatchSendUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_UmbraBatchSendUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_UmbraBatchSendUpdated_eventFilters>> = HandlersJS.TokenisationEngine.UmbraBatchSendUpdated.contractRegister as any;
+
+export const TokenisationEngine_UmbraBatchSendUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_UmbraBatchSendUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_UmbraBatchSendUpdated_eventFilters>> = HandlersJS.TokenisationEngine.UmbraBatchSendUpdated.handler as any;
+
+export const TokenisationEngine_UmbraBatchSendUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_UmbraBatchSendUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_UmbraBatchSendUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_UmbraBatchSendUpdated_eventFilters>) => void = HandlersJS.TokenisationEngine.UmbraBatchSendUpdated.handlerWithLoader as any;
+
+export const TokenisationEngine_UmbraCoreUpdated_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_UmbraCoreUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_UmbraCoreUpdated_eventFilters>> = HandlersJS.TokenisationEngine.UmbraCoreUpdated.contractRegister as any;
+
+export const TokenisationEngine_UmbraCoreUpdated_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_UmbraCoreUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_UmbraCoreUpdated_eventFilters>> = HandlersJS.TokenisationEngine.UmbraCoreUpdated.handler as any;
+
+export const TokenisationEngine_UmbraCoreUpdated_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_UmbraCoreUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_UmbraCoreUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_UmbraCoreUpdated_eventFilters>) => void = HandlersJS.TokenisationEngine.UmbraCoreUpdated.handlerWithLoader as any;
+
+export const TokenisationEngine_Upgraded_contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Upgraded_eventFilters>> = HandlersJS.TokenisationEngine.Upgraded.contractRegister as any;
+
+export const TokenisationEngine_Upgraded_handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Upgraded_eventFilters>> = HandlersJS.TokenisationEngine.Upgraded.handler as any;
+
+export const TokenisationEngine_Upgraded_handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_Upgraded_eventFilters>) => void = HandlersJS.TokenisationEngine.Upgraded.handlerWithLoader as any;
+
+/** Register a Block Handler. It'll be called for every block by default. */
+export const onBlock: (_1:Envio_onBlockOptions<Types_chain>, _2:((_1:Envio_onBlockArgs<Types_handlerContext>) => Promise<void>)) => void = HandlersJS.onBlock as any;
+
+export const TokenisationEngine: {
+  IssuanceRegistryUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_IssuanceRegistryUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceRegistryUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_IssuanceRegistryUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceRegistryUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceRegistryUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_IssuanceRegistryUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceRegistryUpdated_eventFilters>>
+  }; 
+  ProgramVerificationKeyUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_ProgramVerificationKeyUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_ProgramVerificationKeyUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_ProgramVerificationKeyUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_ProgramVerificationKeyUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_ProgramVerificationKeyUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_ProgramVerificationKeyUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_ProgramVerificationKeyUpdated_eventFilters>>
+  }; 
+  OwnershipTransferred: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_OwnershipTransferred_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_OwnershipTransferred_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_OwnershipTransferred_eventFilters>>
+  }; 
+  Initialized: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Initialized_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_Initialized_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Initialized_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Initialized_eventFilters>>
+  }; 
+  UmbraBatchSendUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_UmbraBatchSendUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_UmbraBatchSendUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_UmbraBatchSendUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_UmbraBatchSendUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_UmbraBatchSendUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_UmbraBatchSendUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_UmbraBatchSendUpdated_eventFilters>>
+  }; 
+  ConfidentialSettlementUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_ConfidentialSettlementUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_ConfidentialSettlementUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_ConfidentialSettlementUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_ConfidentialSettlementUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_ConfidentialSettlementUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_ConfidentialSettlementUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_ConfidentialSettlementUpdated_eventFilters>>
+  }; 
+  UmbraCoreUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_UmbraCoreUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_UmbraCoreUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_UmbraCoreUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_UmbraCoreUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_UmbraCoreUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_UmbraCoreUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_UmbraCoreUpdated_eventFilters>>
+  }; 
+  Sp1VerifierUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_Sp1VerifierUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Sp1VerifierUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_Sp1VerifierUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Sp1VerifierUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Sp1VerifierUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_Sp1VerifierUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Sp1VerifierUpdated_eventFilters>>
+  }; 
+  Upgraded: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_Upgraded_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Upgraded_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_Upgraded_eventFilters>>
+  }; 
+  IssuanceExecuted: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_IssuanceExecuted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceExecuted_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_IssuanceExecuted_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceExecuted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceExecuted_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_IssuanceExecuted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceExecuted_eventFilters>>
+  }; 
+  PolicyRegistryUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_PolicyRegistryUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_PolicyRegistryUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_PolicyRegistryUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_PolicyRegistryUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_PolicyRegistryUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_PolicyRegistryUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_PolicyRegistryUpdated_eventFilters>>
+  }; 
+  IssuanceAuditReceipt: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_IssuanceAuditReceipt_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceAuditReceipt_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_IssuanceAuditReceipt_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_IssuanceAuditReceipt_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceAuditReceipt_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_IssuanceAuditReceipt_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_IssuanceAuditReceipt_eventFilters>>
+  }; 
+  RwaTokenUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_RwaTokenUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_RwaTokenUpdated_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_RwaTokenUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_RwaTokenUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_RwaTokenUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_RwaTokenUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_RwaTokenUpdated_eventFilters>>
+  }; 
+  OwnershipTransferStarted: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_TokenisationEngine_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_TokenisationEngine_OwnershipTransferStarted_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_TokenisationEngine_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_OwnershipTransferStarted_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_TokenisationEngine_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_TokenisationEngine_OwnershipTransferStarted_eventFilters>>
+  }
+} = HandlersJS.TokenisationEngine as any;
+
+export const ConfidentialSettlement: {
+  OwnershipTransferred: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_OwnershipTransferred_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_OwnershipTransferred_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_OwnershipTransferred_eventFilters>>
+  }; 
+  NoteClaimed: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_NoteClaimed_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_NoteClaimed_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_NoteClaimed_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_NoteClaimed_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_NoteClaimed_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_NoteClaimed_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_NoteClaimed_eventFilters>>
+  }; 
+  Initialized: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_Initialized_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_Initialized_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_Initialized_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_Initialized_eventFilters>>
+  }; 
+  Upgraded: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_Upgraded_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_Upgraded_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_Upgraded_eventFilters>>
+  }; 
+  EngineAddressUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_EngineAddressUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_EngineAddressUpdated_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_EngineAddressUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_EngineAddressUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_EngineAddressUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_EngineAddressUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_EngineAddressUpdated_eventFilters>>
+  }; 
+  NoteCommitted: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_NoteCommitted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_NoteCommitted_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_NoteCommitted_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_NoteCommitted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_NoteCommitted_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_NoteCommitted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_NoteCommitted_eventFilters>>
+  }; 
+  OwnershipTransferStarted: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_ConfidentialSettlement_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_ConfidentialSettlement_OwnershipTransferStarted_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_ConfidentialSettlement_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_OwnershipTransferStarted_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_ConfidentialSettlement_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_ConfidentialSettlement_OwnershipTransferStarted_eventFilters>>
+  }
+} = HandlersJS.ConfidentialSettlement as any;
+
+export const IssuanceRegistry: {
+  PaymentRegistryUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_PaymentRegistryUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_PaymentRegistryUpdated_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_PaymentRegistryUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_PaymentRegistryUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_PaymentRegistryUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_PaymentRegistryUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_PaymentRegistryUpdated_eventFilters>>
+  }; 
+  OwnershipTransferred: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_OwnershipTransferred_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_OwnershipTransferred_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_OwnershipTransferred_eventFilters>>
+  }; 
+  Initialized: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_Initialized_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_Initialized_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_Initialized_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_Initialized_eventFilters>>
+  }; 
+  IssuanceRequestPrivacyBound: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_IssuanceRequestPrivacyBound_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestPrivacyBound_eventFilters>>
+  }; 
+  WorkerPrivacyConfigurationUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_WorkerPrivacyConfigurationUpdated_eventFilters>>
+  }; 
+  Upgraded: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_Upgraded_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_Upgraded_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_Upgraded_eventFilters>>
+  }; 
+  EngineAddressUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_EngineAddressUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_EngineAddressUpdated_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_EngineAddressUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_EngineAddressUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_EngineAddressUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_EngineAddressUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_EngineAddressUpdated_eventFilters>>
+  }; 
+  IssuanceRequestConsumed: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_IssuanceRequestConsumed_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestConsumed_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_IssuanceRequestConsumed_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestConsumed_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestConsumed_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_IssuanceRequestConsumed_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestConsumed_eventFilters>>
+  }; 
+  IssuanceRequestCreated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_IssuanceRequestCreated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestCreated_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_IssuanceRequestCreated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestCreated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestCreated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_IssuanceRequestCreated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestCreated_eventFilters>>
+  }; 
+  IssuanceRequestCancelled: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_IssuanceRequestCancelled_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestCancelled_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_IssuanceRequestCancelled_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_IssuanceRequestCancelled_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestCancelled_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_IssuanceRequestCancelled_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_IssuanceRequestCancelled_eventFilters>>
+  }; 
+  OwnershipTransferStarted: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_IssuanceRegistry_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_IssuanceRegistry_OwnershipTransferStarted_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_IssuanceRegistry_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_OwnershipTransferStarted_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_IssuanceRegistry_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_IssuanceRegistry_OwnershipTransferStarted_eventFilters>>
+  }
+} = HandlersJS.IssuanceRegistry as any;
+
+export const PaymentRegistry: {
+  OwnershipTransferred: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_OwnershipTransferred_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_OwnershipTransferred_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_OwnershipTransferred_eventFilters>>
+  }; 
+  Initialized: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_Initialized_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_Initialized_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_Initialized_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_Initialized_eventFilters>>
+  }; 
+  ParticipantProfileUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_ParticipantProfileUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantProfileUpdated_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_ParticipantProfileUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantProfileUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantProfileUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_ParticipantProfileUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantProfileUpdated_eventFilters>>
+  }; 
+  ParticipantStatusUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_ParticipantStatusUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantStatusUpdated_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_ParticipantStatusUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantStatusUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantStatusUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_ParticipantStatusUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantStatusUpdated_eventFilters>>
+  }; 
+  Upgraded: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_Upgraded_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_Upgraded_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_Upgraded_eventFilters>>
+  }; 
+  ParticipantRoleUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_ParticipantRoleUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantRoleUpdated_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_ParticipantRoleUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_ParticipantRoleUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantRoleUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_ParticipantRoleUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_ParticipantRoleUpdated_eventFilters>>
+  }; 
+  OwnershipTransferStarted: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PaymentRegistry_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_PaymentRegistry_OwnershipTransferStarted_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PaymentRegistry_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_OwnershipTransferStarted_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PaymentRegistry_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PaymentRegistry_OwnershipTransferStarted_eventFilters>>
+  }
+} = HandlersJS.PaymentRegistry as any;
+
+export const RwaToken1155: {
+  ApprovalForAll: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_ApprovalForAll_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_ApprovalForAll_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_ApprovalForAll_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_ApprovalForAll_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_ApprovalForAll_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_ApprovalForAll_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_ApprovalForAll_eventFilters>>
+  }; 
+  OwnershipTransferred: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_OwnershipTransferred_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_OwnershipTransferred_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_OwnershipTransferred_eventFilters>>
+  }; 
+  TransferBatch: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_TransferBatch_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_TransferBatch_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_TransferBatch_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_TransferBatch_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_TransferBatch_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_TransferBatch_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_TransferBatch_eventFilters>>
+  }; 
+  Initialized: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_Initialized_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_Initialized_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_Initialized_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_Initialized_eventFilters>>
+  }; 
+  TransferSingle: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_TransferSingle_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_TransferSingle_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_TransferSingle_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_TransferSingle_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_TransferSingle_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_TransferSingle_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_TransferSingle_eventFilters>>
+  }; 
+  Upgraded: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_Upgraded_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_Upgraded_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_Upgraded_eventFilters>>
+  }; 
+  ContractURIUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_ContractURIUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_ContractURIUpdated_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_ContractURIUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_ContractURIUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_ContractURIUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_ContractURIUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_ContractURIUpdated_eventFilters>>
+  }; 
+  EngineAddressUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_EngineAddressUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_EngineAddressUpdated_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_EngineAddressUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_EngineAddressUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_EngineAddressUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_EngineAddressUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_EngineAddressUpdated_eventFilters>>
+  }; 
+  URI: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_URI_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_URI_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_URI_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_URI_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_URI_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_URI_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_URI_eventFilters>>
+  }; 
+  OwnershipTransferStarted: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_RwaToken1155_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_RwaToken1155_OwnershipTransferStarted_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_RwaToken1155_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_OwnershipTransferStarted_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_RwaToken1155_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_RwaToken1155_OwnershipTransferStarted_eventFilters>>
+  }
+} = HandlersJS.RwaToken1155 as any;
+
+export const PolicyRegistry: {
+  OwnershipTransferred: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_OwnershipTransferred_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_OwnershipTransferred_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_OwnershipTransferred_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_OwnershipTransferred_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_OwnershipTransferred_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_OwnershipTransferred_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_OwnershipTransferred_eventFilters>>
+  }; 
+  PolicyPrivacyConstraintsUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyPrivacyConstraintsUpdated_eventFilters>>
+  }; 
+  Initialized: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_Initialized_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_Initialized_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_Initialized_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_Initialized_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_Initialized_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_Initialized_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_Initialized_eventFilters>>
+  }; 
+  PolicyDeprecated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_PolicyDeprecated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyDeprecated_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_PolicyDeprecated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyDeprecated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyDeprecated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_PolicyDeprecated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyDeprecated_eventFilters>>
+  }; 
+  ActivePolicyIdentifierUpdated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_ActivePolicyIdentifierUpdated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_ActivePolicyIdentifierUpdated_eventFilters>>
+  }; 
+  PolicyCreated: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_PolicyCreated_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyCreated_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_PolicyCreated_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_PolicyCreated_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyCreated_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_PolicyCreated_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_PolicyCreated_eventFilters>>
+  }; 
+  Upgraded: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_Upgraded_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_Upgraded_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_Upgraded_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_Upgraded_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_Upgraded_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_Upgraded_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_Upgraded_eventFilters>>
+  }; 
+  OwnershipTransferStarted: {
+    handlerWithLoader: <loaderReturn>(_1:Internal_genericHandlerWithLoader<Internal_genericLoader<Internal_genericLoaderArgs<Types_PolicyRegistry_OwnershipTransferStarted_event,Types_loaderContext>,loaderReturn>,Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_OwnershipTransferStarted_event,Types_handlerContext,loaderReturn>>,Types_PolicyRegistry_OwnershipTransferStarted_eventFilters>) => void; 
+    handler: Types_fnWithEventConfig<Internal_genericHandler<Internal_genericHandlerArgs<Types_PolicyRegistry_OwnershipTransferStarted_event,Types_handlerContext,void>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_OwnershipTransferStarted_eventFilters>>; 
+    contractRegister: Types_fnWithEventConfig<Internal_genericContractRegister<Internal_genericContractRegisterArgs<Types_PolicyRegistry_OwnershipTransferStarted_event,Types_contractRegistrations>>,Types_HandlerTypes_eventConfig<Types_PolicyRegistry_OwnershipTransferStarted_eventFilters>>
+  }
+} = HandlersJS.PolicyRegistry as any;

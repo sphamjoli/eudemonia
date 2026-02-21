@@ -1,0 +1,5 @@
+# Ignore everything except the committed SP1 ELF + verification key
+*
+!.gitignore
+!sp1/
+!sp1/*

@@ -1,0 +1,13 @@
+**/node_modules
+**/dist
+**/out
+**/cache
+**/.env
+**/.DS_Store
+
+# Rust build output
+/target
+crates/target/
+
+# Claude Code session data
+.claude/

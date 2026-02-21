@@ -1,0 +1,136 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: envio
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d envio"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - envio-postgres:/var/lib/postgresql/data
+
+  redis:
+    image: redis:8-alpine
+    restart: always
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  graphql-engine:
+    image: hasura/graphql-engine:v2.36.0
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgres@postgres:5432/envio
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_ADMIN_SECRET: testing
+      HASURA_GRAPHQL_DEV_MODE: "true"
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup,http-log,webhook-log,websocket-log,query-log
+      HASURA_GRAPHQL_STRINGIFY_NUMERIC_TYPES: "true"
+      HASURA_GRAPHQL_UNAUTHORIZED_ROLE: public
+    ports:
+      - "8081:8080"
+    healthcheck:
+      test: timeout 1s bash -c ':> /dev/tcp/127.0.0.1/8080' || exit 1
+      interval: 5s
+      timeout: 2s
+      retries: 50
+      start_period: 5s
+
+  indexer:
+    build: ./indexer
+    restart: unless-stopped
+    env_file:
+      # Uses concrete local values by default; override with INDEXER_ENV_FILE=...
+      - ${INDEXER_ENV_FILE:-./indexer/.env}
+    environment:
+      ENVIO_PG_HOST: postgres
+      ENVIO_PG_PORT: 5432
+      ENVIO_PG_USER: postgres
+      ENVIO_PG_PASSWORD: postgres
+      ENVIO_POSTGRES_PASSWORD: postgres
+      ENVIO_PG_DATABASE: envio
+      PG_HOST: postgres
+      PG_PORT: 5432
+      PG_USER: postgres
+      PG_PASSWORD: postgres
+      PG_DATABASE: envio
+      HASURA_GRAPHQL_ENDPOINT: http://graphql-engine:8080/v1/metadata
+      HASURA_GRAPHQL_ADMIN_SECRET: testing
+      TUI_OFF: "true"
+    volumes:
+      - ./indexer:/app
+      - indexer-node-modules:/app/node_modules
+      - ./contracts/out:/contracts/out:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      graphql-engine:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:9898/healthz').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 10s
+      timeout: 3s
+      retries: 20
+      start_period: 90s
+    ports:
+      - "8080:9898"
+
+  worker:
+    build: ./indexer
+    restart: unless-stopped
+    command: ["npm","run","worker"]
+    env_file:
+      # Uses concrete local values by default; override with INDEXER_ENV_FILE=...
+      - ${INDEXER_ENV_FILE:-./indexer/.env}
+    environment:
+      INDEXER_GRAPHQL_URL: http://graphql-engine:8080/v1/graphql
+      HASURA_GRAPHQL_ADMIN_SECRET: testing
+    volumes:
+      - ./indexer:/app
+      - indexer-node-modules:/app/node_modules
+      - ./crates:/crates
+      - ./contracts/out:/contracts/out:ro
+    ports:
+      - "8787:8787"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      graphql-engine:
+        condition: service_healthy
+      indexer:
+        condition: service_healthy
+
+  ui:
+    build: ./ui
+    command: ["npm","run","dev","--","--host","0.0.0.0","--port","5173"]
+    env_file:
+      # Uses concrete local values by default; override with UI_ENV_FILE=...
+      - ${UI_ENV_FILE:-./ui/.env}
+    volumes:
+      - ./ui:/app
+      - ui-node-modules:/app/node_modules
+    ports:
+      - "5173:5173"
+
+volumes:
+  envio-postgres:
+  indexer-node-modules:
+  ui-node-modules:

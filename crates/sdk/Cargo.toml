@@ -1,0 +1,12 @@
+[package]
+name = "eudemonia_sp1_sdk"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+alloy-primitives = { version = "1.5.7", features = ["k256"] }
+alloy-sol-types = "1.5.7"
+hex = "0.4"
+thiserror = "1"

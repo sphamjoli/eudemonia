@@ -1,0 +1,101 @@
+name: eudemonia-indexer
+ecosystem: evm
+
+networks:
+  - id: 99999
+    start_block: 0
+    rpc_config:
+      url: '${ADI_RPC_URL}'
+    contracts:
+      - name: PaymentRegistry
+        address: '${PAYMENT_REGISTRY}'
+        abi_file_path: ../contracts/out/PaymentRegistry.sol/PaymentRegistry.json
+        handler: src/EventHandlers.ts
+        events:
+          - event: Initialized(uint64)
+          - event: OwnershipTransferStarted(address indexed,address indexed)
+          - event: OwnershipTransferred(address indexed,address indexed)
+          - event: ParticipantProfileUpdated(address indexed,bytes32,uint64)
+          - event: ParticipantRoleUpdated(address indexed,uint8 indexed,bool,uint256,uint64)
+          - event: ParticipantStatusUpdated(address indexed,bool,uint64)
+          - event: Upgraded(address indexed)
+
+      - name: IssuanceRegistry
+        address: '${ISSUANCE_REGISTRY}'
+        abi_file_path: ../contracts/out/IssuanceRegistry.sol/IssuanceRegistry.json
+        handler: src/EventHandlers.ts
+        events:
+          - event: EngineAddressUpdated(address indexed,address indexed)
+          - event: Initialized(uint64)
+          - event: IssuanceRequestCancelled(uint256 indexed,address indexed)
+          - event: IssuanceRequestConsumed(uint256 indexed,address indexed)
+          - event: IssuanceRequestCreated(uint256 indexed,bytes32 indexed,address indexed,address,uint8,address,uint256,uint256,bytes32,bytes32,bytes32,uint64,bytes32)
+          - event: IssuanceRequestPrivacyBound(uint256 indexed,uint8,bytes32)
+          - event: PaymentRegistryUpdated(address indexed,address indexed)
+          - event: WorkerPrivacyConfigurationUpdated(address indexed,uint8,bytes32,bytes32,bytes32,uint32,uint64)
+          - event: OwnershipTransferStarted(address indexed,address indexed)
+          - event: OwnershipTransferred(address indexed,address indexed)
+          - event: Upgraded(address indexed)
+
+      - name: PolicyRegistry
+        address: '${POLICY_REGISTRY}'
+        abi_file_path: ../contracts/out/PolicyRegistry.sol/PolicyRegistry.json
+        handler: src/EventHandlers.ts
+        events:
+          - event: ActivePolicyIdentifierUpdated(uint256 indexed,uint256 indexed)
+          - event: Initialized(uint64)
+          - event: OwnershipTransferStarted(address indexed,address indexed)
+          - event: OwnershipTransferred(address indexed,address indexed)
+          - event: PolicyCreated(uint256 indexed,bytes32 indexed,bytes32,uint256,uint64,uint64)
+          - event: PolicyDeprecated(uint256 indexed)
+          - event: PolicyPrivacyConstraintsUpdated(uint256 indexed,bool,bool,bool,bool,bool,bool,uint32)
+          - event: Upgraded(address indexed)
+
+      - name: TokenisationEngine
+        address: '${TOKENISATION_ENGINE}'
+        abi_file_path: ../contracts/out/TokenisationEngine.sol/TokenisationEngine.json
+        handler: src/EventHandlers.ts
+        events:
+          - event: Initialized(uint64)
+          - event: IssuanceAuditReceipt(uint256 indexed,uint256 indexed,uint8,bytes32,bytes32,bytes32)
+          - event: IssuanceExecuted(uint256 indexed,uint256 indexed,bytes32 indexed,bytes32,uint8,address,uint256,uint256,bytes32,bytes32,bytes32)
+          - event: IssuanceRegistryUpdated(address indexed,address indexed)
+          - event: OwnershipTransferStarted(address indexed,address indexed)
+          - event: OwnershipTransferred(address indexed,address indexed)
+          - event: PolicyRegistryUpdated(address indexed,address indexed)
+          - event: ProgramVerificationKeyUpdated(bytes32 indexed,bytes32 indexed)
+          - event: RwaTokenUpdated(address indexed,address indexed)
+          - event: ConfidentialSettlementUpdated(address indexed,address indexed)
+          - event: Sp1VerifierUpdated(address indexed,address indexed)
+          - event: UmbraBatchSendUpdated(address indexed,address indexed)
+          - event: UmbraCoreUpdated(address indexed,address indexed)
+          - event: Upgraded(address indexed)
+
+      - name: RwaToken1155
+        address: '${RWA_TOKEN}'
+        abi_file_path: ../contracts/out/RwaToken1155.sol/RwaToken1155.json
+        handler: src/EventHandlers.ts
+        events:
+          - event: ApprovalForAll(address indexed,address indexed,bool)
+          - event: ContractURIUpdated(string,string)
+          - event: EngineAddressUpdated(address indexed,address indexed)
+          - event: Initialized(uint64)
+          - event: OwnershipTransferStarted(address indexed,address indexed)
+          - event: OwnershipTransferred(address indexed,address indexed)
+          - event: TransferBatch(address indexed,address indexed,address indexed,uint256[],uint256[])
+          - event: TransferSingle(address indexed,address indexed,address indexed,uint256,uint256)
+          - event: URI(string,uint256 indexed)
+          - event: Upgraded(address indexed)
+
+      - name: ConfidentialSettlement
+        address: '${CONFIDENTIAL_SETTLEMENT}'
+        abi_file_path: ../contracts/out/ConfidentialSettlement.sol/ConfidentialSettlement.json
+        handler: src/EventHandlers.ts
+        events:
+          - event: EngineAddressUpdated(address indexed,address indexed)
+          - event: Initialized(uint64)
+          - event: NoteClaimed(uint256 indexed,bytes32 indexed)
+          - event: NoteCommitted(uint256 indexed,uint256 indexed,uint256 indexed,uint8,address,uint256,bytes32,bytes32,bytes32)
+          - event: OwnershipTransferStarted(address indexed,address indexed)
+          - event: OwnershipTransferred(address indexed,address indexed)
+          - event: Upgraded(address indexed)
