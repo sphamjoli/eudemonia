@@ -79,6 +79,43 @@ const policyRegistryAbi = [
 /** Minimal ABI subset required by the worker for issuance submission. */
 const tokenisationEngineAbi = [
   {
+    type: 'error',
+    name: 'InvalidPolicyIdentifier',
+    inputs: [],
+  },
+  {
+    type: 'error',
+    name: 'PolicyNotActive',
+    inputs: [{ name: 'policyIdentifier', type: 'uint256' }],
+  },
+  {
+    type: 'error',
+    name: 'PrivacyModeNotAllowed',
+    inputs: [
+      { name: 'policyIdentifier', type: 'uint256' },
+      { name: 'privacyMode', type: 'uint8' },
+    ],
+  },
+  {
+    type: 'error',
+    name: 'PrivacyModeOverrideNotAllowed',
+    inputs: [
+      { name: 'policyIdentifier', type: 'uint256' },
+      { name: 'requestMode', type: 'uint8' },
+      { name: 'configuredMode', type: 'uint8' },
+    ],
+  },
+  {
+    type: 'error',
+    name: 'InvalidPublicValues',
+    inputs: [
+      { name: 'expectedParametersHash', type: 'bytes32' },
+      { name: 'expectedPolicyHash', type: 'bytes32' },
+      { name: 'actualParametersHash', type: 'bytes32' },
+      { name: 'actualPolicyHash', type: 'bytes32' },
+    ],
+  },
+  {
     type: 'function',
     stateMutability: 'nonpayable',
     name: 'verifyAndExecuteIssuance',
@@ -331,11 +368,24 @@ export class ChainClient {
       ],
     });
 
-    const txHash = await this.walletClient.sendTransaction({
-      account: this.account,
-      to: this.cfg.tokenisationEngine,
-      data,
-    });
+    let txHash: Hex;
+    try {
+      txHash = await this.walletClient.sendTransaction({
+        account: this.account,
+        to: this.cfg.tokenisationEngine,
+        data,
+      });
+    } catch (cause) {
+      const revertData = extractRevertData(cause);
+      const decoded = revertData ? tryDecodeAbiError(tokenisationEngineAbi as unknown as Abi, revertData) : null;
+      if (decoded) {
+        throw new Error(decoded);
+      }
+      if (cause instanceof BaseError) {
+        throw new Error(cause.shortMessage || cause.message);
+      }
+      throw cause;
+    }
 
     const receipt = await this.publicClient.waitForTransactionReceipt({ hash: txHash });
     if (receipt.status !== 'success') {

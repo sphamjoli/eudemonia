@@ -200,6 +200,9 @@ async function processJob(args: {
       return;
     }
 
+    // Persist resolved policyId so the catch block reads the correct value if a later step throws.
+    await redis.setProofJobState({ ...runningState, policyId: indexedPolicy.policyIdentifier });
+
     const policyId = BigInt(indexedPolicy.policyIdentifier);
     const policyDefinition = await redis.getPolicyDefinition(indexedPolicy.policyIdentifier);
     if (!policyDefinition) {

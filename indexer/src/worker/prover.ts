@@ -74,7 +74,7 @@ export async function proveWitness(args: {
   if (cfg.sp1MockMode) {
     return {
       publicValues: `${witness.request.parameters_hash}${witness.policy.policy_hash.slice(2)}` as Hex,
-      proofBytes: '0x01',
+      proofBytes: '0x',
     };
   }
   const workingDir = await mkdtemp(join(tmpdir(), `eudemonia-sp1-${requestIdentifier}-`));
