@@ -86,7 +86,6 @@
       transform: translateY(-16px);
     }
 
-    /* ── chrome ── */
     .wordmark {
       position: fixed;
       top: 30px;
@@ -188,7 +187,6 @@
       right: 38px;
     }
 
-    /* ── shared atoms ── */
     .eyebrow {
       font-size: 11px;
       font-weight: 700;
@@ -238,7 +236,6 @@
       border: 1px solid var(--gold-border);
     }
 
-    /* ── S1 title ── */
     #s1 {
       text-align: center;
     }
@@ -284,7 +281,6 @@
       background: var(--gold);
     }
 
-    /* ── S2 scenario ── */
     #s2 {
       align-items: flex-start;
       max-width: 1060px;
@@ -374,7 +370,6 @@
       font-weight: 700;
     }
 
-    /* ── S3 blockers ── */
     #s3 {
       align-items: flex-start;
       max-width: 1060px;
@@ -456,7 +451,6 @@
       font-weight: 600;
     }
 
-    /* ── S4 hypothesis ── */
     #s4 {
       max-width: 1060px;
       margin: 0 auto;
@@ -525,7 +519,6 @@
       flex-wrap: wrap;
     }
 
-    /* ── S5 crypto primitives ── */
     #s5 {
       max-width: 1060px;
       margin: 0 auto;
@@ -575,7 +568,6 @@
       font-weight: 600;
     }
 
-    /* ── Demo step slides (S6–S10) ── */
     .demo-slide {
       align-items: flex-start;
       max-width: 1060px;
@@ -704,7 +696,6 @@
       margin-top: 2px;
     }
 
-    /* ── S11 live transition ── */
     #s11 {
       text-align: center;
     }
@@ -758,7 +749,6 @@
       }
     }
 
-    /* ── S12 summary ── */
     #s12 {
       text-align: center;
     }
@@ -830,7 +820,6 @@
 
   <div class="deck">
 
-    <!-- ══ S1 · Title ══ -->
     <div class="slide active" id="s1">
       <div class="q-wrap">
         <div class="eyebrow">Eudemonia · ETHDenver 2026</div>
@@ -840,15 +829,14 @@
         <div class="divider-line"></div>
         <p class="q-sub">
           Speed and cost are solved.<br />
-          The remaining constraint is trust: compliance that is enforceable, private, and auditable.
+          The remaining constraint is trust: prove the required checks happened before payment, keep sensitive data private, and keep an audit trail.
         </p>
         <div class="q-tag">
-          <div class="q-dot"></div>On-chain compliance attestation
+          <div class="q-dot"></div>Compliance infrastructure, not a consumer dApp
         </div>
       </div>
     </div>
 
-    <!-- ══ S2 · Scenario ══ -->
     <div class="slide" id="s2">
       <div class="pill-tag pill-gold" style="margin-bottom:16px;">Scenario</div>
       <h2 class="s2-headline">Alice works in Johannesburg.<br />Her employer is in Amsterdam.</h2>
@@ -884,7 +872,6 @@
       </div>
     </div>
 
-    <!-- ══ S3 · Three blockers ══ -->
     <div class="slide" id="s3">
       <div class="pill-tag pill-gold" style="margin-bottom:16px;">Observed constraints</div>
       <h2 class="s2-headline" style="margin-bottom:24px;">Three blockers</h2>
@@ -895,9 +882,9 @@
           <div class="blocker-text">
             <div class="blocker-title">Privacy blocks coordination</div>
             <div class="blocker-body">
-              Institutions avoid shared infrastructure when counterparties, flows, or positions become visible.
-              <strong>They will not expose sensitive data to participate.</strong>
-              Privacy is not a feature they want — it is a condition for engagement.
+              Institutions avoid shared rails when counterparties, payment flows, or positions become visible.
+              <strong>They will not expose sensitive operational data just to use new infrastructure.</strong>
+              Privacy is a requirement, not a nice-to-have.
             </div>
           </div>
         </div>
@@ -907,8 +894,8 @@
             <div class="blocker-title">Compliance breaks across the workflow</div>
             <div class="blocker-body">
               Compliance is not one check. It spans request → approval → settlement → audit.
-              <strong>End-to-end coverage with privacy intact does not exist as a single product.</strong>
-              Partial solutions require manual stitching.
+              <strong>Most systems cover one stage well, but not all stages together with privacy preserved.</strong>
+              Teams bridge the gaps manually.
             </div>
           </div>
         </div>
@@ -919,40 +906,39 @@
             <div class="blocker-body">
               The bottleneck is not throughput. Institutions need
               <strong>enforceable controls and replayable audit evidence</strong>
-              that map to existing workflows and regulatory obligations — not generic infrastructure.
+              that map to current governance and regulation.
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ══ S4 · Hypothesis ══ -->
     <div class="slide" id="s4">
       <div style="width:100%;max-width:1060px;margin:0 auto;">
         <div class="eyebrow">Hypothesis</div>
-        <h2 class="s3-headline">Tokenise the attestation, not the asset.</h2>
+        <h2 class="s3-headline">Put proof of process on-chain, keep raw data off-chain.</h2>
         <p class="s3-sub">
-          Existing providers still run checks. Approvers still approve.
-          A proof binds that process to settlement — without exposing the underlying data.
+          Existing compliance providers still run checks. Approvers still approve.
+          Eudemonia adds a verifiable proof layer so settlement happens only when rules are satisfied.
         </p>
         <div class="vs-table">
           <div class="card vs-row">
             <div class="vs-label">Compliance checks</div>
             <div class="vs-old">PDF report. Manual audit.</div>
             <div class="vs-arr">→</div>
-            <div class="vs-new">Records stay private. Proof certifies checks ran and are fresh.</div>
+            <div class="vs-new">Records stay private. A proof confirms checks ran and are still valid.</div>
           </div>
           <div class="card vs-row">
             <div class="vs-label">Authorised sign-off</div>
             <div class="vs-old">Email chain. Weak binding.</div>
             <div class="vs-arr">→</div>
-            <div class="vs-new">Proof enforces k-of-n approval without publishing identities.</div>
+            <div class="vs-new">System enforces k-of-n approvals without publishing all identities.</div>
           </div>
           <div class="card vs-row">
             <div class="vs-label">Settlement</div>
             <div class="vs-old">Assumed process.</div>
             <div class="vs-arr">→</div>
-            <div class="vs-new">Settlement executes only if the proof verifies. Replay protection built in.</div>
+            <div class="vs-new">Settlement executes only if proof verification passes. Replay protection is built in.</div>
           </div>
         </div>
         <p
@@ -962,66 +948,64 @@
       </div>
     </div>
 
-    <!-- ══ S5 · Cryptographic primitives ══ -->
     <div class="slide" id="s5">
       <div style="width:100%;max-width:1060px;margin:0 auto;">
         <div class="eyebrow">Under the hood</div>
-        <h2 class="s3-headline" style="margin-bottom:8px;">Four primitives. One guarantee.</h2>
-        <p class="s3-sub">Each does exactly one job. Together they make the invariant hold.</p>
+        <h2 class="s3-headline" style="margin-bottom:8px;">Four building blocks, explained simply.</h2>
+        <p class="s3-sub">Each block has one job. Together they ensure rules are enforced before payment.</p>
         <div class="crypto-grid">
           <div class="card crypto-cell">
             <div class="crypto-mono">keccak256</div>
-            <div class="crypto-title">Binding commitment</div>
+            <div class="crypto-title">Digital fingerprint</div>
             <div class="crypto-body">
               All issuance parameters — amount, beneficiary, chain, policy — are hashed on submission and stored
               on-chain.
-              <strong>Any field change shifts the hash.</strong> The circuit recomputes it; a mismatch means proof
+              <strong>If any field changes, the fingerprint changes.</strong> The circuit recomputes it; a mismatch means proof
               failure.
             </div>
           </div>
           <div class="card crypto-cell">
             <div class="crypto-mono">ECDSA · secp256k1</div>
-            <div class="crypto-title">Attestor identity</div>
+            <div class="crypto-title">Signed approval</div>
             <div class="crypto-body">
               Attestors sign the parameters hash off-chain.
               The circuit recovers the signing address and checks it against the registered set.
-              <strong>You cannot produce a valid signature without the authorised key.</strong>
+              <strong>Only an authorised key can produce a valid signature.</strong>
             </div>
           </div>
           <div class="card crypto-cell">
             <div class="crypto-mono">Merkle inclusion proof</div>
-            <div class="crypto-title">Set membership</div>
+            <div class="crypto-title">Proof of list membership</div>
             <div class="crypto-body">
               Attestors are registered as leaves in an on-chain Merkle tree.
-              The circuit proves each signer is in that tree <strong>without revealing which subset approved</strong> —
-              threshold is enforced without exposing identities.
+              The circuit proves each signer is in that approved list <strong>without publishing the whole list each time</strong> —
+              threshold is enforced with minimal disclosure.
             </div>
           </div>
           <div class="card crypto-cell">
             <div class="crypto-mono">SP1 zkVM · SNARK</div>
-            <div class="crypto-title">Execution proof</div>
+            <div class="crypto-title">Proof that rules were executed</div>
             <div class="crypto-body">
               The zkVM proves the validation logic ran correctly: checks passed, threshold met, records fresh.
-              <strong>On-chain verification is O(1)</strong> regardless of quorum size or number of checks.
+              <strong>On-chain verification cost stays stable</strong> even as checks or approvers grow.
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ══ S6 · Demo step 1 — Setup ══ -->
     <div class="slide demo-slide" id="s6">
       <div class="demo-step-header">
         <div class="demo-step-badge">Step 1 of 5</div>
         <div class="demo-step-cmd">make demo-setup</div>
       </div>
       <h2 class="demo-headline">
-        The employer registers a compliance policy on-chain.
+        Step 1: the employer publishes a policy rulebook on-chain.
       </h2>
       <p class="demo-story">
         Before Alice can be paid, the employer defines the rules: <strong>who can attest</strong>,
         how many approvals are required, what compliance checks are mandatory, how fresh KYC data must be.
-        The attestor set is committed as a Merkle root. <strong>Once stored, the policy hash is immutable.</strong>
+        The attestor set is committed as a Merkle root (compact approved list). <strong>Once stored, policy terms are tamper-evident.</strong>
       </p>
       <div class="demo-grid">
         <div class="card demo-cmd-block">
@@ -1042,19 +1026,18 @@
       </div>
     </div>
 
-    <!-- ══ S7 · Demo step 2 — Request ══ -->
     <div class="slide demo-slide" id="s7">
       <div class="demo-step-header">
         <div class="demo-step-badge">Step 2 of 5</div>
         <div class="demo-step-cmd">make demo-request</div>
       </div>
       <h2 class="demo-headline">
-        The issuer commits Alice's payment parameters on-chain.
+        Step 2: the issuer submits Alice's payment request.
       </h2>
       <p class="demo-story">
         Amount, beneficiary, privacy mode, and chain ID are hashed together and stored in the IssuanceRegistry.
         <strong>This commitment is immutable.</strong> Any change to any field — even one digit of the amount —
-        produces a different hash, and the proof fails. The chain doesn't see the fields, only the hash.
+        produces a different hash, and the proof fails.
       </p>
       <div class="demo-grid">
         <div class="card demo-cmd-block">
@@ -1075,20 +1058,19 @@
       </div>
     </div>
 
-    <!-- ══ S8 · Demo step 3 — Attest ══ -->
     <div class="slide demo-slide" id="s8">
       <div class="demo-step-header">
         <div class="demo-step-badge">Step 3 of 5</div>
         <div class="demo-step-cmd">make demo-attest DEMO_REQUEST_ID=N</div>
       </div>
       <h2 class="demo-headline">
-        The compliance officer signs off. Off-chain. Privately.
+        Step 3: the compliance officer signs the request off-chain.
       </h2>
       <p class="demo-story">
         The attestor signs the parameters hash with their ECDSA key and stores the signature in Redis.
         <strong>Nothing is published on-chain at this point.</strong>
         The circuit will later recover the signer's address from the signature and verify
-        they are a leaf in the registered Merkle tree — threshold enforcement without public disclosure.
+        they are in the approved attestor list.
       </p>
       <div class="demo-grid">
         <div class="card demo-cmd-block">
@@ -1108,19 +1090,18 @@
       </div>
     </div>
 
-    <!-- ══ S9 · Demo step 4 — Prove & settle ══ -->
     <div class="slide demo-slide" id="s9">
       <div class="demo-step-header">
         <div class="demo-step-badge">Step 4 of 5</div>
         <div class="demo-step-cmd">make demo-status DEMO_REQUEST_ID=N</div>
       </div>
       <h2 class="demo-headline">
-        The worker proves compliance and settles Alice's payment.
+        Step 4: the worker proves compliance, then settlement executes.
       </h2>
       <p class="demo-story">
         The worker assembles the witness — parameters, policy, signatures, KYC records — and passes it to the SP1 guest.
-        Seven checks run inside the circuit. If all pass, a proof is produced and submitted to TokenisationEngine.
-        The contract verifies the proof, reads the committed hashes, marks the request CONSUMED,
+        If checks pass, a proof is produced and submitted to TokenisationEngine.
+        The contract verifies the proof, reads the committed hashes, marks the request as consumed,
         <strong>and mints Alice's token.</strong>
       </p>
       <div class="demo-grid">
@@ -1141,20 +1122,19 @@
       </div>
     </div>
 
-    <!-- ══ S10 · Demo step 5 — Audit ══ -->
     <div class="slide demo-slide" id="s10">
       <div class="demo-step-header">
         <div class="demo-step-badge">Step 5 of 5</div>
         <div class="demo-step-cmd">make demo-audit DEMO_REQUEST_ID=N</div>
       </div>
       <h2 class="demo-headline">
-        A regulator verifies the proof. They see nothing about Alice.
+        Step 5: auditors can verify what happened without raw personal data.
       </h2>
       <p class="demo-story">
         The audit command surfaces the complete verifiable trail: request parameters, policy configuration,
         attestation records, proof job state, compliance check results.
         <strong>The ZK proof is on-chain and publicly verifiable.</strong>
-        The compliance data — KYC records, approval identities, amounts — stays in Redis, off-chain, controlled.
+        The compliance source records stay in Redis, off-chain, institution-controlled.
       </p>
       <div class="demo-grid">
         <div class="card demo-cmd-block">
@@ -1174,21 +1154,19 @@
       </div>
     </div>
 
-    <!-- ══ S11 · Live ══ -->
     <div class="slide" id="s11">
       <div class="lfo-big gradient-text">Live demo.</div>
-      <p class="lfo-sub">policy → request → attest → prove → settle → audit</p>
+      <p class="lfo-sub">rulebook → request → approval → proof → settlement → audit</p>
       <div class="live-row">
         <div class="live-dot"></div>
-        local devnet · SP1_MOCK_MODE=true
+        Local devnet · SP1_MOCK_MODE=true (demo speed)
       </div>
     </div>
 
-    <!-- ══ S12 · Summary ══ -->
     <div class="slide" id="s12">
       <div class="eyebrow">Summary</div>
       <h2 class="s6-q gradient-text">
-        Trust comes from enforceable controls and auditability, with configurable privacy.
+        Institutions adopt when controls are enforceable, privacy is configurable, and audits are easy.
       </h2>
       <ul class="ans-list">
         <li>
@@ -1208,7 +1186,7 @@
         </li>
       </ul>
       <p class="s6-cta">
-        <strong>Where does this break?</strong> Which assumption fails first?
+        <strong>Eudemonia is compliance infrastructure:</strong> existing institutions keep their systems, and add verifiable policy enforcement.
       </p>
     </div>
 
